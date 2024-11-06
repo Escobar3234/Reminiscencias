@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="fondo-container"></div>
+  <div class="form-container">
+    <form (ngSubmit)="register()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Seleccionar Rol</ion-label>
+        <ion-select [(ngModel)]="role" name="role" placeholder="Seleccionar Rol" required>
+          <ion-select-option value="jugador">Jugador</ion-select-option>
+          <ion-select-option value="master">Maestro</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="full" type="submit" [disabled]="!formValid()">Registrar</ion-button>
+    </form>
+    <ion-button expand="block" class="back-button" [routerLink]="['/login']">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

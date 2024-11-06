@@ -1,0 +1,83 @@
+ion-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+
+  /* Contenedor de fondo */
+  .fondo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/image.jpg'); /* Revisa que esta ruta sea correcta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    .logo-container {
+      position: absolute;
+      z-index: 1;
+      margin-bottom: 50px;
+  
+      .logo {
+        width: 400  px;
+        height: auto;
+      }
+    }
+  
+
+    /* Filtro oscuro */
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  /* Contenedor de las elecciones */
+  .choice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura del contenido */
+    gap: 20px;
+    z-index: 1;
+
+    ion-button.choice-button {
+      font-family: 'Cinzel Decorative', cursive !important;
+      font-size: 1.5rem !important;
+      --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+      --color: white !important; /* Color del texto */
+      border: 1px solid white !important;
+      margin: 10px !important;
+      padding: 10px 20px !important;
+      width: 200px !important;
+      text-align: center !important;
+      box-shadow: none !important;
+      transition: background-color 0.3s ease !important;
+      
+      &:hover {
+        --background: rgba(255, 255, 255, 0.2) !important; /* Transparencia leve al pasar el mouse */
+      }
+    }
+  }
+
+  /* Botón de regreso */
+  ion-fab-button {
+    --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+    --color: white !important; /* Color del ícono */
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+}

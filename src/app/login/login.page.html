@@ -12,13 +12,13 @@
   <div class="title-container">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+      <!--<ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>-->
     </ion-item>
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="contrasena" name="contrasena"></ion-input>
+      <!--<ion-input type="password" [(ngModel)]="contrasena" name="contrasena"></ion-input>-->
     </ion-item>
-    <ion-button expand="block" (click)="login()">Iniciar Sesión</ion-button>
+    <ion-button expand="" [routerLink]="['/rol']">Iniciar Sesión</ion-button>
     <ion-button class="register-button" [routerLink]="['/register']">Registro</ion-button>
   </div>
 </ion-content>

@@ -3,7 +3,7 @@ ion-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Asegura que el contenido ocupe toda la altura de la pantalla */
   color: white;
   text-align: center;
 
@@ -28,7 +28,7 @@ ion-content {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -39,7 +39,7 @@ ion-content {
     margin-bottom: 50px;
 
     .logo {
-      width: 350px;
+      width: 400px;
       height: auto;
     }
   }
@@ -50,43 +50,44 @@ ion-content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 1;
-    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el contenedor del formulario */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo del formulario con transparencia */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     gap: 20px; /* Espacio entre los elementos */
+    z-index: 1;
+  }
 
-    ion-item {
-      width: 100%;
-      max-width: 400px; /* Para limitar el ancho máximo */
-      --background: transparent;
-      --color: white;
-    }
+  ion-item {
+    width: 100%; /* Asegura que el ion-item ocupe todo el ancho del contenedor */
+    --background: transparent;
+  }
 
-    ion-label {
-      color: white;
-    }
+  ion-label {
+    color: white;
+  }
 
-    ion-input {
-      color: white;
-    }
+  ion-input {
+    color: white;
+  }
 
-    ion-button {
-      font-family: 'Cinzel Decorative', cursive !important;
-      font-size: 1.5rem !important;
+  ion-button {
+    font-family: 'Cinzel Decorative', cursive !important;
+    font-size: 1.5rem !important;
+    --background: rgba(255, 255, 255, 0.2) !important;
+    --color: white !important;
+    border: 1px solid white !important;
+    margin: 10px !important;
+    padding: 10px 20px !important;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
+    text-align: center !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease !important;
+
+    &:hover {
       --background: rgba(255, 255, 255, 0.2) !important;
-      --color: white !important;
-      border: 1px solid white !important;
-      margin: 10px !important;
-      padding: 10px 20px !important;
-      width: 100%;
-      max-width: 400px; /* Para limitar el ancho máximo */
-      text-align: center !important;
-      box-shadow: none !important;
-      transition: background-color 0.3s ease !important;
-
-      &:hover {
-        --background: rgba(255, 255, 255, 0.2) !important;
-      }
     }
   }
 }

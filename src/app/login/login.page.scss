@@ -28,7 +28,7 @@ ion-content {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0);
     }
   }
 
@@ -39,12 +39,12 @@ ion-content {
     margin-bottom: 50px;
 
     .logo {
-      width: 400px;
+      width: 350px;
       height: auto;
     }
   }
 
-  /* Contenedor de los botones */
+  /* Contenedor del formulario */
   .title-container {
     display: flex;
     flex-direction: column;
@@ -53,22 +53,39 @@ ion-content {
     position: relative;
     z-index: 1;
     text-align: center;
+    gap: 20px; /* Espacio entre los elementos */
 
-    ion-button.start-button, ion-button.register-button {
+    ion-item {
+      width: 100%;
+      max-width: 400px; /* Para limitar el ancho máximo */
+      --background: transparent;
+      --color: white;
+    }
+
+    ion-label {
+      color: white;
+    }
+
+    ion-input {
+      color: white;
+    }
+
+    ion-button {
       font-family: 'Cinzel Decorative', cursive !important;
       font-size: 1.5rem !important;
-      --background: rgba(255, 255, 255, 0) !important; /* Transparente */
-      --color: white !important; /* Color del texto */
+      --background: rgba(255, 255, 255, 0.2) !important;
+      --color: white !important;
       border: 1px solid white !important;
       margin: 10px !important;
       padding: 10px 20px !important;
-      width: 200px !important;
+      width: 100%;
+      max-width: 400px; /* Para limitar el ancho máximo */
       text-align: center !important;
       box-shadow: none !important;
       transition: background-color 0.3s ease !important;
-      
+
       &:hover {
-        --background: rgba(255, 255, 255, 0.2) !important; /* Transparencia leve al pasar el mouse */
+        --background: rgba(255, 255, 255, 0.2) !important;
       }
     }
   }

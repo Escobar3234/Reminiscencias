@@ -1,6 +1,7 @@
 ion-content {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -19,19 +20,7 @@ ion-content {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-
-    .logo-container {
-      position: absolute;
-      z-index: 1;
-      margin-bottom: 50px;
-  
-      .logo {
-        width: 400  px;
-        height: auto;
-      }
-    }
-  
-
+    
     /* Filtro oscuro */
     &:after {
       content: '';
@@ -44,13 +33,22 @@ ion-content {
     }
   }
 
+  .logo-container {
+    z-index: 1;
+    margin-bottom: 20px;
+
+    .logo {
+      width: 400px;  /* Ajusta el tamaño del logo según sea necesario */
+      height: auto;
+    }
+  }
+
   /* Contenedor de las elecciones */
   .choice-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Asegura que el contenedor ocupe toda la altura del contenido */
     gap: 20px;
     z-index: 1;
 
@@ -75,7 +73,7 @@ ion-content {
 
   /* Botón de regreso */
   ion-fab-button {
-    --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
     --color: white !important; /* Color del ícono */
     border: 1px solid white !important;
     box-shadow: none !important;

@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../practica"
+		},
+		{
+			"path": "../../../../../../../MiProyecto"
+		},
+		{
+			"path": "../../../../../../../Downloads/jueves"
+		},
+		{
+			"path": "../../../../../Python"
+		},
+		{
+			"path": "../../../../../loginApp"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "apps"
+	}
+}

@@ -23,6 +23,18 @@ const routes: Routes = [
     path: 'rol',
     loadChildren: () => import('./rol/rol.module').then( m => m.RolPageModule)
   },
+  {
+    path: 'mesas',
+    loadChildren: () => import('./mesas/mesas.module').then( m => m.MesasPageModule)
+  },
+  {
+    path: 'perma1',
+    loadChildren: () => import('./perma1/perma1.module').then( m => m.Perma1PageModule)
+  },
+  {
+    path: 'aggmesa',
+    loadChildren: () => import('./aggmesa/aggmesa.module').then( m => m.AggmesaPageModule)
+  },
 ];
 
 @NgModule({

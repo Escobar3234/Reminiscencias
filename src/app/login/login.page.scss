@@ -41,7 +41,7 @@ ion-content {
     margin-bottom: 30px;
 
     .logo {
-      width: 350px; /* Ajusta el tamaño del logo */
+      width: 250px; /* Ajusta el tamaño del logo */
       height: auto;
     }
   }
@@ -51,7 +51,7 @@ ion-content {
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo del formulario con transparencia */
-    padding: 20px;
+    padding: 80px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;

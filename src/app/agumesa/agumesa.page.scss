@@ -1,0 +1,50 @@
+ion-content {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  padding: 0; /* Elimina el padding para centrar perfectamente */
+  position: relative; /* Necesario para el fondo */
+
+  .fondo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/3.png'); /* Ajusta la ruta a tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    ion-item {
+      width: 100%; /* Asegúrate de que los elementos ion-item ocupen todo el ancho */
+      margin-bottom: 16px;
+    }
+
+    ion-button {
+      width: 100%; /* Asegúrate de que el botón ocupe todo el ancho */
+      margin-top: 24px;
+    }
+    ion-fab-button {
+      --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+      --color: white !important; /* Color del ícono */
+      border: 1px solid white !important;
+      box-shadow: none !important;
+    }
+  }
+}

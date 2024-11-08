@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AggmesaPageRoutingModule } from './aggmesa-routing.module';
+import { AgumesaPageRoutingModule } from './agumesa-routing.module';
 
-import { AggmesaPage } from './aggmesa.page';
+import { AgumesaPage } from './agumesa.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AggmesaPageRoutingModule
+    AgumesaPageRoutingModule
   ],
-  declarations: [AggmesaPage]
+  declarations: [AgumesaPage]
 })
-export class AggmesaPageModule {}
+export class AgumesaPageModule {}

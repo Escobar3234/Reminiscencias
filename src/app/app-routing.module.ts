@@ -32,8 +32,12 @@ const routes: Routes = [
     loadChildren: () => import('./perma1/perma1.module').then( m => m.Perma1PageModule)
   },
   {
-    path: 'aggmesa',
-    loadChildren: () => import('./aggmesa/aggmesa.module').then( m => m.AggmesaPageModule)
+    path: 'agmesa',
+    loadChildren: () => import('./agmesa/agmesa.module').then( m => m.AgmesaPageModule)
+  },
+  {
+    path: 'agumesa',
+    loadChildren: () => import('./agumesa/agumesa.module').then( m => m.AgumesaPageModule)
   },
 ];
 

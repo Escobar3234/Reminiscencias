@@ -1,0 +1,16 @@
+<ion-content>
+  <div class="fondo-container"></div>
+  <div class="main-container">
+    <h1>Estadísticas</h1>
+    <div class="stats-grid">
+      <div *ngFor="let stat of stats | keyvalue">
+        <div class="stat-label">{{ stat.key }}</div>
+        <ion-button fill="clear" (click)="decrement(stat.key)" class="control-button">-</ion-button>
+        <span class="stat-value">{{ stat.value }}</span>
+        <ion-button fill="clear" (click)="increment(stat.key)" class="control-button">+</ion-button>
+      </div>
+    </div>
+    <ion-button expand="block" class="continue-button" [routerLink]="['/stadisticas1']">CONTINUAR</ion-button>
+  </div>
+</ion-content>
+

@@ -39,6 +39,28 @@ const routes: Routes = [
     path: 'agumesa',
     loadChildren: () => import('./agumesa/agumesa.module').then( m => m.AgumesaPageModule)
   },
+  {
+    path: 'escojerp',
+    loadChildren: () => import('./escojerp/escojerp.module').then( m => m.EscojerpPageModule)
+  },
+  {
+    path: 'personaje',
+    loadChildren: () => import('./personaje/personaje.module').then( m => m.PersonajePageModule)
+  },
+  {
+    path: 'stadisticas',
+    loadChildren: () => import('./stadisticas/stadisticas.module').then( m => m.StadisticasPageModule)
+  },
+  {
+    path: 'stadisticas1',
+    loadChildren: () => import('./stadisticas1/stadisticas1.module').then( m => m.Stadisticas1PageModule)
+  },
+  {
+    path: 'hoja-persona',
+    loadChildren: () => import('./hoja-persona/hoja-persona.module').then( m => m.HojaPersonaPageModule)
+  },
+
+
 ];
 
 @NgModule({

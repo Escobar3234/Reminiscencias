@@ -1,6 +1,5 @@
-
-/* Fondo estilo pergamino */
-.background-image {
+ion-content {
+  .background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -11,8 +10,16 @@
     background-position: center;
     z-index: -1;
   }
-  
-  /* Contenedor central */
+
+  .logo-container {
+    margin-bottom: 30px;
+
+    .logo {
+      width: 250px; /* Ajusta el tamaño del logo */
+      height: auto;
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -20,11 +27,11 @@
     padding: 20px;
     margin-top: 20px;
     color: #000;
-    max-width: 400px;
+    max-width: 600px; /* Ajusta el ancho máximo del contenedor */
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
     margin: auto;
   }
-  
-  /* Estilo del título */
+
   .title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -32,8 +39,14 @@
     margin-bottom: 20px;
     color: #3e2723; /* Color oscuro */
   }
-  
-  /* Estilo para los ion-item de entrada */
+
+  .input-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 16px; /* Espacio entre los elementos de la fila */
+  }
+
   .input-item {
     --background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
     border-radius: 12px;
@@ -41,20 +54,21 @@
     --inner-padding-top: 10px;
     --inner-padding-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    flex: 1; /* Permite que los elementos ocupen todo el espacio disponible */
+    min-width: 45%; /* Ancho mínimo para evitar que los elementos se reduzcan demasiado */
   }
-  
+
   .input-item ion-label {
     color: #3e2723;
     font-weight: bold;
   }
-  
+
   .input-item ion-input {
     --background: transparent;
     --placeholder-color: #3e2723; /* Color del texto de placeholder */
     color: #3e2723; /* Color del texto de entrada */
   }
-  
-  /* Estilo del botón de continuar */
+
   .continue-button {
     --background: #70553a;
     --color: #fff;
@@ -64,5 +78,13 @@
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+    width: 100%;
   }
-  
+
+  ion-fab-button {
+    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
+    --color: white !important; /* Color del ícono */
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+}

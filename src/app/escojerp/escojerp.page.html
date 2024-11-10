@@ -4,21 +4,25 @@
     <div class="logo-container">
       <img src="/assets/2.png" alt="Logo" class="logo">
     </div>
+    <h1>PERSONAJES</h1>
+    <br>
     <div class="form-container">
       <div class="grid-container">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
-        <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
+        <button class="personaje-button" [routerLink]="['/personaje']">
+          <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
+        </button>
+        <button class="personaje-button">
+          <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
+        </button>
+        <button class="personaje-button">
+          <img src="/assets/personaje.png" alt="Personaje" class="personaje-img">
+        </button>
+        <!-- Repite esto para cada imagen -->
       </div>
-      <form (ngSubmit)="escojerp()">
-        <ion-button expand="block" class="choice-button" [routerLink]="['/personaje']">Crear Personaje</ion-button>
-      </form>
+      
+    </div>
+    <div class="button-container">
+    <ion-button expand="block" class="custom-button" [routerLink]="['/personaje']"> + </ion-button>
     </div>
   </div>
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">

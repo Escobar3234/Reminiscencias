@@ -70,12 +70,13 @@ ion-content {
         }
       }
 
-      ion-fab-button {
+      
+    }
+    ion-fab-button {
         --background: rgba(255, 255, 255, 0) !important; /* Transparente */
         --color: white !important; /* Color del ícono */
         border: 1px solid white !important;
         box-shadow: none !important;
       }
-    }
-  }
+}
   

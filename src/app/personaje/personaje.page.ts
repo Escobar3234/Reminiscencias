@@ -12,4 +12,11 @@ export class PersonajePage implements OnInit {
   ngOnInit() {
   }
 
+  onFileSelected(event: any) { 
+    const file = event.target.files[0]; 
+    if (file) { 
+      console.log('File selected:', file); 
+    } 
+  }
+
 }

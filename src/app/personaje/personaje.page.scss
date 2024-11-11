@@ -10,6 +10,15 @@ ion-content {
     background-position: center;
     z-index: -1;
   }
+  .upload-button {
+    --background: #e0b5739d; /* Color del botón */
+    --color: #000000; /* Color del texto */
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+  }
+  
 
   .logo-container {
     margin-bottom: 30px;

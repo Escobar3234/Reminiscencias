@@ -1,91 +1,90 @@
 ion-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: white;
-    text-align: center;
-    .h1{
-        background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+
+  .h1 {
+    background-color: black;
+  }
+
+  .fondo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    .logo-container {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 50px;
+
+      .logo {
+        width: 100px;
+        height: auto;
+      }
     }
-  
-    /* Contenedor de fondo */
-    .fondo-container {
+
+    &:after {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('/assets/3.png'); /* Ajusta la ruta a tu imagen de fondo */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.5); /* Ajusta el nivel de opacidad según lo necesites */
+    }
+  }
 
-      .logo-container {
-        position: relative;
-        z-index: 1;
-        margin-bottom: 50px;
-    
-        .logo {
-          width: 100px;
-          height: auto;
-        }
-      }
+  .custom-button {
+    --background: #008CBA; /* Color del botón */
+    --color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%; /* Botón ocupa la mitad del ancho del contenedor */
+    padding: 10px; /* Ajuste del tamaño del botón */
+    height: auto; /* Ajuste de la altura del botón */
+    font-size: 1rem; /* Ajuste del tamaño de la fuente */
   
-      /* Filtro oscuro */
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0); /* Ajusta el nivel de opacidad según lo necesites */
-      }
+    .button-content {
+      display: flex;
+      align-items: center;
     }
   
-    /* Contenedor de botones */
-    .button-container {
+    .mesa-image {
+      width: 30px; /* Ajuste del tamaño de la imagen */
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+  
+    .text-content {
       display: flex;
       flex-direction: column;
-      justify-content: center; /* Centrar verticalmente */
-      align-items: center; /* Centrar horizontalmente */
-      gap: 20px;
-      z-index: 1;
-  
-      ion-button.custom-button {
-        font-family: 'Cinzel Decorative', cursive !important;
-        font-size: 1.2rem !important;
-        --background: rgba(196, 192, 192, 0.8) !important; /* Fondo oscuro */
-        --color: rgb(12, 12, 12) !important; /* Texto dorado */
-        margin: 10px !important;
-        padding: 10px 20px !important;
-        width: 250px !important;
-        height: 60px !important;
-        text-align: center !important;
-        box-shadow: none !important;
-        transition: background-color 0.3s ease !important;
-        
-        &:hover {
-          --background: rgba(255, 255, 255, 0.658) !important; /* Transparencia leve al pasar el mouse */
-        }
-      }
+      text-align: left; /* Alineación del texto a la izquierda */
     }
   
-    /* Estilo del título */
-    .header-title {
-      font-family: 'Cinzel Decorative', cursive;
-      font-size: 1.5rem;
-      color: gold;
+    .mesa-name {
+      font-size: 1rem; /* Ajuste del tamaño del texto */
+      font-weight: bold;
     }
-    ion-fab-button {
-      --background: rgba(252, 249, 249, 0) !important; /* Transparente */
-      --color: white !important; /* Color del ícono */
-      border: 1px solid white !important;
-      box-shadow: none !important;
+  
+    .mesa-id {
+      font-size: 0.8rem; /* Ajuste del tamaño del texto */
+      color: #ddd;
     }
   }
   
+  
+}

@@ -7,9 +7,8 @@ ion-content {
     color: #000;
     font-family: 'Cinzel Decorative', cursive;
     position: relative;
-  }
-  
-  .fondo-container {
+
+    .fondo-container {
     background-image: url('/assets/fondo.png');
     background-size: cover;
     background-position: center;
@@ -86,4 +85,32 @@ ion-content {
     margin-top: 15px;
     width: 100%;
   }
+
+  .custom-button { 
+    --background: #008CBA; /* Color del botón */ 
+    --color: #fff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    
+    .button-content { 
+      display: flex; 
+      align-items: center; 
+    } 
+    .mesa-image { 
+      width: 40px; 
+      height: 40px; 
+      margin-right: 10px; 
+      border-radius: 5px; 
+    } 
+    .mesa-name { 
+      font-size: 1.2rem; 
+      font-weight: bold; 
+    } .mesa-id { 
+      font-size: 0.9rem; 
+      color: #ddd; } 
+    }
+  
+}
+  
   

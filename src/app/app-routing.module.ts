@@ -59,8 +59,10 @@ const routes: Routes = [
     path: 'hoja-persona',
     loadChildren: () => import('./hoja-persona/hoja-persona.module').then( m => m.HojaPersonaPageModule)
   },
-
-
+  {
+    path: 'stadisticas2',
+    loadChildren: () => import('./stadisticas2/stadisticas2.module').then( m => m.Stadisticas2PageModule)
+  },
 ];
 
 @NgModule({

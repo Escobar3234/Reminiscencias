@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="scroll-container">
+    <h2 class="title">Debilidades</h2>
+
+    <!-- Cuadrícula de debilidades alineada hacia la parte inferior -->
+    <div class="weakness-grid-container">
+      <div class="weakness-grid">
+        <div class="weakness-item">
+          <ion-img src="assets/veneno.png" class="weakness-image"></ion-img>
+          <p>Envenenamiento</p>
+        </div>
+        <div class="weakness-item">
+          <ion-img src="assets/mald.png" class="weakness-image"></ion-img>
+          <p>Maldiciones</p>
+        </div>
+        <div class="weakness-item">
+          <ion-img src="assets/can.png" class="weakness-image"></ion-img>
+          <p>Cansancio</p>
+        </div>
+        <div class="weakness-item">
+          <ion-img src="assets/hues.png" class="weakness-image"></ion-img>
+          <p>Huesos Rotos</p>
+        </div>
+      </div>
+
+      <!-- Botón de retroceso debajo de la cuadrícula -->
+      <ion-button fill="clear" class="back-button" [routerLink]="['/hoja-persona']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

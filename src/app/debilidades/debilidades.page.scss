@@ -1,0 +1,57 @@
+ion-content {
+    --background: url('/assets/psjs.jpg') no-repeat center center fixed;
+    --background-size: cover;
+  }
+  
+  .scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5A3E2B;
+    margin-bottom: 20px;
+  }
+  
+  .weakness-grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el contenido hacia la parte inferior */
+    height: 50%; /* Ocupa la mitad inferior de la pantalla */
+    width: 100%;
+  }
+  
+  .weakness-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .weakness-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #5A3E2B;
+  }
+  
+  .weakness-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+  
+  .back-button {
+    color: #5A3E2B;
+    margin-top: 20px;
+  }
+  

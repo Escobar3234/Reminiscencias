@@ -71,6 +71,10 @@ const routes: Routes = [
     path: 'debilidades',
     loadChildren: () => import('./debilidades/debilidades.module').then( m => m.DebilidadesPageModule)
   },
+  {
+    path: 'caract1',
+    loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
+  },
 
 ];
 

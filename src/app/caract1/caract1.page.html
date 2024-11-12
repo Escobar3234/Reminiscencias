@@ -1,0 +1,25 @@
+<ion-content>
+  <h1>CARACTERISTICAS</h1>
+  <div class="fondo-container"></div>
+  
+  <ion-item lines="none">
+    <ion-label (click)="toggleDropdown()">Fuerza</ion-label>
+  </ion-item>
+  <div *ngIf="dropdownVisible" class="dropdown-content">
+    <div class="dropdown-item">Puntos Base: 10</div>
+    <div class="dropdown-item">Bonificador: 15</div>
+    <div class="dropdown-item">Bonificador por competencia: 10</div>
+    <div class="dropdown-item">Bonificador por equipo: 15</div>
+    <div class="dropdown-item">Le suma a el dado: 10</div>
+  </div>
+  <ion-item lines="none">
+    <ion-label (click)="toggleDropdown()">Destreza</ion-label>
+  </ion-item>
+  <div *ngIf="dropdownVisible" class="dropdown-content">
+    <div class="dropdown-item">Puntos Base: 10</div>
+    <div class="dropdown-item">Bonificador: 15</div>
+    <div class="dropdown-item">Bonificador por competencia: 10</div>
+    <div class="dropdown-item">Bonificador por equipo: 15</div>
+    <div class="dropdown-item">Le suma a el dado: 10</div>
+  </div>
+</ion-content>

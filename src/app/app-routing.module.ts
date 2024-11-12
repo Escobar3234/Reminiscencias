@@ -62,7 +62,8 @@ const routes: Routes = [
   {
     path: 'stadisticas2',
     loadChildren: () => import('./stadisticas2/stadisticas2.module').then( m => m.Stadisticas2PageModule)
-  },  {
+  },
+  {
     path: 'habilidades',
     loadChildren: () => import('./habilidades/habilidades.module').then( m => m.HabilidadesPageModule)
   },

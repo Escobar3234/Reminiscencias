@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'stadisticas2',
     loadChildren: () => import('./stadisticas2/stadisticas2.module').then( m => m.Stadisticas2PageModule)
   },
+  {
+    path: 'caract1',
+    loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
+  },
 ];
 
 @NgModule({

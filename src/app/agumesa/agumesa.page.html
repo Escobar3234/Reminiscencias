@@ -1,26 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Agregar Usuario</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="fondo-container"></div>
-  <div class="form-container">
-    <!--<form (ngSubmit)="addUser()">-->
-      <ion-item>
-        <ion-label position="floating">Nombre del Usuario</ion-label>
-        <!--<ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>-->
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">ID del Usuario</ion-label>
-        <!--<ion-input type="text" [(ngModel)]="userId" name="userId" required></ion-input>-->
-      </ion-item>
-      <ion-button expand="full" type="submit">Agregar Usuario</ion-button>
-    <!--</form>-->
+  <div class="background-image"></div> <!-- Fondo tipo pergamino -->
+  <div class="container">
+    <h1 class="title">PERSONAJE</h1>
+    <ion-item class="input-item">
+      <ion-label position="floating">Apodo</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">id</ion-label>
+      <ion-input type="text"></ion-input>
+    
+    </ion-item>
+    <!-- cambiar el link del personaje nuevo -->
+    <ion-button expand="block" class="continue-button" [routerLink]="['/login']">CONTINUAR</ion-button>
   </div>
+
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button [routerLink]="['/perma1']">
+    <ion-fab-button [routerLink]="['/mesas']">
       <ion-icon name="arrow-back"></ion-icon>
     </ion-fab-button>
   </ion-fab>

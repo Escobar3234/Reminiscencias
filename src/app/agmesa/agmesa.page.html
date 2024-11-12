@@ -1,21 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Crear Nueva Mesa</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="form-container">
-    <!--<form (ngSubmit)="createMesa()">-->
-      <ion-item>
-        <ion-label position="floating">Nombre de la Mesa</ion-label>
-        <!--<ion-input type="text" [(ngModel)]="mesaName" name="mesaName" required></ion-input>-->
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">ID de la Mesa</ion-label>
-        <!--<ion-input type="text" [(ngModel)]="mesaId" name="mesaId" required></ion-input>-->
-      </ion-item>
-      <ion-button expand="full" type="submit">Crear Mesa</ion-button>
-    <!--</form>-->
+  <div class="background-image"></div> <!-- Fondo tipo pergamino -->
+  <div class="container">
+    <h1 class="title">Nueva mesa</h1>
+    <ion-item class="input-item">
+      <ion-label position="floating">Nombre de la mesa</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label position="floating">id de la mesa</ion-label>
+      <ion-input type="text"></ion-input>
+    
+    </ion-item>
+    <!-- cambiar el link del personaje nuevo -->
+    <ion-button expand="block" class="continue-button" [routerLink]="['/login']">CREAR</ion-button>
   </div>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/mesas']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

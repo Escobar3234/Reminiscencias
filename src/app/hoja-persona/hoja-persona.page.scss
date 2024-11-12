@@ -1,75 +1,88 @@
+ion-content {
+  --background: url('/assets/psjs.jpg') no-repeat center center fixed;
+  --background-size: cover;
+}
+
 .scroll-container {
-    background-image: url('/assets/fondo1.png');
-    background-size: cover;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .character-info {
-    margin-bottom: 20px;
-  }
-  
-  .character-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: auto;
-  }
-  
-  .character-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #5A3E2B;
-  }
-  
-  .character-stats p {
-    margin: 5px 0;
-    font-weight: bold;
-    color: #5A3E2B;
-  }
-  
-  .character-bars {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .bar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-  
-  .hp-bar, .xp-bar {
-    height: 10px;
-    border-radius: 5px;
-    flex-grow: 1;
-    margin-left: 5px;
-  }
-  
-  .hp-bar {
-    background-color: #ff4d4d;
-    width: 50%; /* Ajusta el valor según el HP */
-  }
-  
-  .xp-bar {
-    background-color: #4d4dff;
-    width: 80%; /* Ajusta el valor según el XP */
-  }
-  
-  .stats-section {
-    color: #5A3E2B;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .back-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #5A3E2B;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100%; /* Ocupa toda la pantalla */
+  color: #5A3E2B;
+  background: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+  border-radius: 10px;
+  text-align: center;
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.character-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.character-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #5A3E2B;
+}
+
+.character-stats p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.character-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.hp-bar, .xp-bar {
+  height: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+  margin-left: 5px;
+}
+
+.hp-bar {
+  background-color: #ff4d4d;
+  width: 50%; /* Ajusta el valor según el HP */
+}
+
+.xp-bar {
+  background-color: #4d4dff;
+  width: 80%; /* Ajusta el valor según el XP */
+}
+
+.stats-section {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #5A3E2B;
+}

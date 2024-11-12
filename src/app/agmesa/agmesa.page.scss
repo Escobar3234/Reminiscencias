@@ -1,25 +1,73 @@
-ion-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 16px;
-  
-    .form-container {
-      width: 100%;
-      max-width: 400px;
-      background: #ffffff;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-      ion-item {
-        margin-bottom: 16px;
-      }
-  
-      ion-button {
-        margin-top: 24px;
-      }
-    }
-  }
-  
+
+/* Fondo estilo pergamino */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/3.png'); /* Ruta de la imagen */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Contenedor central */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  color: #000;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Estilo del título */
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3e2723; /* Color oscuro */
+}
+
+/* Estilo para los ion-item de entrada */
+.input-item {
+  --background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  --inner-padding-top: 10px;
+  --inner-padding-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+.input-item ion-label {
+  color: #3e2723;
+  font-weight: bold;
+}
+
+.input-item ion-input {
+  --background: transparent;
+  --placeholder-color: #3e2723; /* Color del texto de placeholder */
+  color: #3e2723; /* Color del texto de entrada */
+}
+
+/* Estilo del botón de continuar */
+.continue-button {
+  --background: #1a0c3e51;
+  --color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+}
+ion-fab-button {
+  --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+  --color: white !important; /* Color del ícono */
+  border: 1px solid white !important;
+  box-shadow: none !important;
+}

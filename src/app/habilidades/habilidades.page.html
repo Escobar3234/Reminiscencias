@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="skills-container">
+    <div class="fondo-container"></div>
+    <div class="skill" *ngFor="let skill of skills" (click)="toggleInfo(skill)">
+      <img [src]="skill.image" alt="{{ skill.name }}" class="skill-image">
+      <h4 class="skill-name">{{ skill.name }}</h4>
+
+      <!-- Información de la habilidad, solo visible al tocar la imagen -->
+      <div class="skill-info" *ngIf="skill.showInfo">
+        {{ skill.info }}
+      </div>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/hoja-persona']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

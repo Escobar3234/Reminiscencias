@@ -109,12 +109,11 @@ ion-content {
       width: 100%;
       margin-top: 10px;
     }
-
-    .back-button {
-      margin-top: 20px;
-      --background: transparent;
-      --color: white;
-      border: 1px solid white;
-    }
+  }
+  ion-fab-button {
+    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
+    --color: white !important; /* Color del ícono */
+    border: 1px solid white !important;
+    box-shadow: none !important;
   }
 }

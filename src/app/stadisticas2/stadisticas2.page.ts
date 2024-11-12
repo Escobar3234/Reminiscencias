@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-stadisticas1',
-  templateUrl: './stadisticas1.page.html',
-  styleUrls: ['./stadisticas1.page.scss'],
+  selector: 'app-stadisticas2',
+  templateUrl: './stadisticas2.page.html',
+  styleUrls: ['./stadisticas2.page.scss'],
 })
-export class Stadisticas1Page {
+export class Stadisticas2Page {
   stats: { [key: string]: number } = {
-    ESTAMINA: 10,
-    BALANCE: 10,
-    RESISTENCIA: 10,
-    CONOCIMIENTO: 10,
-    FVOLUNTAD: 10,
-    CARISMA: 10,
+    MOSCULATURA: 10,
+    PUNTERIA: 10,
+    SALUD: 10,
+    LOGICA: 10,
+    INTUICION: 10,
+    VERBORREA: 10,
   };
 
   get totalPoints(): number {
@@ -30,3 +30,4 @@ increment(stat: string) {
    } 
  } 
 }
+

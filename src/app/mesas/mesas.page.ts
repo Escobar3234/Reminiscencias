@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mesas.page.scss'],
 })
 export class MesasPage implements OnInit {
+  imageSrc: string = '/assets/personaje.png'; 
+  mesaName: string = 'Valle de la Muerte'; 
+  mesaId: string = '232323';
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

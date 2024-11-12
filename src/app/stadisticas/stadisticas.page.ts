@@ -7,25 +7,26 @@ import { Component } from '@angular/core';
 })
 export class stadisticasPage {
   stats: { [key: string]: number } = {
-    fuerza: 10,
-    destreza: 10,
-    constitucion: 10,
-    inteligencia: 10,
-    sabiduria: 10,
-    apariencia: 10,
-    estamina: 10,
-    balance: 10,
-    resistencia: 10,
-    conocimiento: 10
+    FUERZA: 10,
+    DESTREZA: 10,
+    CONSTITUCION: 10,
+    INTELIGENCIA: 10,
+    SABIDURIA: 10,
+    APARIENCIA: 10,
   };
 
-  increment(stat: string) {
-    this.stats[stat]++;
+  get totalPoints(): number {
+     return Object.values(this.stats).reduce((a, b) => a + b, 0);
   }
-
-  decrement(stat: string) {
-    if (this.stats[stat] > 0) {
-      this.stats[stat]--;
-  }
-}
+ increment(stat: string) {
+   if (this.totalPoints < 72) {
+     this.stats[stat]++;
+     }
+   } 
+   
+   decrement(stat: string) { 
+    if (this.stats[stat] > 0) { 
+      this.stats[stat]--; 
+    } 
+  } 
 }

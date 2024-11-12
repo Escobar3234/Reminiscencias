@@ -47,7 +47,7 @@ ion-content {
   }
 
   .custom-button {
-    --background: #008CBA; /* Color del botón */
+    --background: #008bba6c; /* Color del botón */
     --color: #fff;
     display: flex;
     align-items: center;
@@ -60,6 +60,7 @@ ion-content {
     .button-content {
       display: flex;
       align-items: center;
+      
     }
   
     .mesa-image {
@@ -85,6 +86,34 @@ ion-content {
       color: #ddd;
     }
   }
+  ion-fab-button {
+    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
+    --color: white !important; /* Color del ícono */
+    border: 1px solid white !important;
+    box-shadow: none !important;
+  }
+  .choice-button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  }
   
+  .choice-button {
+    font-family: 'Cinzel Decorative', cursive !important;
+    font-size: 1.5rem !important;
+    --background: rgba(255, 255, 255, 0) !important; /* Transparente */
+    --color: white !important; /* Color del texto */
+    border: 1px solid white !important;
+    margin: 10px !important;
+    padding: 10px 20px !important;
+    text-align: center !important;
+    box-shadow: none !important;
+    transition: background-color 0.3s ease !important;
+  
+    &:hover {
+      --background: rgba(255, 255, 255, 0.2) !important; /* Transparencia leve al pasar el mouse */
+    }
+  }
   
 }

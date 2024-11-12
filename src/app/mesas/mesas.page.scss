@@ -46,74 +46,74 @@ ion-content {
     }
   }
 
-  .custom-button {
-    --background: #008bba6c; /* Color del botón */
-    --color: #fff;
+  .button-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    width: 50%; /* Botón ocupa la mitad del ancho del contenedor */
-    padding: 10px; /* Ajuste del tamaño del botón */
-    height: auto; /* Ajuste de la altura del botón */
-    font-size: 1rem; /* Ajuste del tamaño de la fuente */
-  
+    align-items: center;
+    gap: 20px;
+    z-index: 1;
+
+    ion-button.custom-button {
+      font-family: 'Cinzel Decorative', cursive !important;
+      font-size: 1.2rem !important;
+      --background: rgba(196, 192, 192, 0.8) !important;
+      --color: rgb(12, 12, 12) !important;
+      margin: 10px !important;
+      padding: 10px 20px !important;
+       /* width: 50% !important;Botón ocupa la mitad del ancho del contenedor */
+      height: auto !important; /* Ajuste de la altura del botón */
+      box-shadow: none !important;
+      transition: background-color 0.3s ease !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      &:hover {
+        --background: rgba(255, 255, 255, 0.658) !important;
+      }
+    }
+
     .button-content {
       display: flex;
       align-items: center;
-      
     }
-  
+
     .mesa-image {
       width: 30px; /* Ajuste del tamaño de la imagen */
       height: 30px;
       margin-right: 10px;
       border-radius: 5px;
     }
-  
+
     .text-content {
       display: flex;
       flex-direction: column;
       text-align: left; /* Alineación del texto a la izquierda */
     }
-  
+
     .mesa-name {
       font-size: 1rem; /* Ajuste del tamaño del texto */
       font-weight: bold;
     }
-  
+
     .mesa-id {
       font-size: 0.8rem; /* Ajuste del tamaño del texto */
       color: #ddd;
     }
   }
+
+  .header-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.5rem;
+    color: gold;
+  }
+
   ion-fab-button {
-    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
-    --color: white !important; /* Color del ícono */
+    --background: rgba(252, 249, 249, 0) !important;
+    --color: white !important;
     border: 1px solid white !important;
     box-shadow: none !important;
   }
-  .choice-button-container {
-    display: flex;
-    justify-content: center; /* Centra el botón horizontalmente */
-    align-items: center;
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-  }
-  
-  .choice-button {
-    font-family: 'Cinzel Decorative', cursive !important;
-    font-size: 1.5rem !important;
-    --background: rgba(255, 255, 255, 0) !important; /* Transparente */
-    --color: white !important; /* Color del texto */
-    border: 1px solid white !important;
-    margin: 10px !important;
-    padding: 10px 20px !important;
-    text-align: center !important;
-    box-shadow: none !important;
-    transition: background-color 0.3s ease !important;
-  
-    &:hover {
-      --background: rgba(255, 255, 255, 0.2) !important; /* Transparencia leve al pasar el mouse */
-    }
-  }
-  
 }

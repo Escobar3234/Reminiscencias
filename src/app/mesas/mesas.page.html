@@ -11,10 +11,21 @@
   </div>
   <h1>Mesas</h1>
   <div class="button-container">
-    <ion-button expand="block" class="custom-button" [routerLink]="['/perma1']">Valle de la Muerte</ion-button>
+    <div class="main-container">
+      <ion-button expand="block" class="custom-button" [routerLink]="['/perma1']">
+        <div class="button-content">
+          <img [src]="imageSrc" alt="Mesa Imagen" class="mesa-image">
+          <div class="text-content">
+            <div class="mesa-name">{{ mesaName }}</div>
+            <br>
+            <div class="mesa-id">ID: {{ mesaId }}</div>
+          </div>
+        </div>
+      </ion-button>
+    </div>
     
+    <ion-button expand="block" class="custom-button" [routerLink]="['/agumesa']">+</ion-button>
   </div>
-  <ion-button expand="block" class="choice-button" [routerLink]="['/agumesa']">CREAR </ion-button>
 
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button [routerLink]="['/rol']">

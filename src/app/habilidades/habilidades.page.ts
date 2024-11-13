@@ -8,17 +8,30 @@ import { Component } from '@angular/core';
 export class HabilidadesPage {
   skills = [
     {
-      name: 'Gwynevere',
-      image: '/assets/fen.jpeg',
-      info: 'El que perdonaba murió en la cruz .',
+      name: 'fuerza',
+      image: '/assets/av1.jpg',
+      info: 'aumenta su fuerza contante mas pasa el tiempo .',
       showInfo: false
     },
     {
-      name: 'la dama de negro',
-      image: '/assets/my.jpeg',
-      info: 'my vida.',
+      name: 'escudo de atenea',
+      image: '/assets/av2.jpg',
+      info: 'escudo que te sube el coraje y la salud  .',
       showInfo: false
     },
+    {
+      name: 'mana',
+      image: '/assets/av3.jpg',
+      info: 'suministra el valance del mana  .',
+      showInfo: false
+    },
+    {
+      name: 'cruz de plata',
+      image: '/assets/av4.jpg',
+      info: 'cruz de palatab .',
+      showInfo: false
+    },
+    
     // Agrega más habilidades según sea necesario
   ];
 

@@ -1,0 +1,6 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "remi",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

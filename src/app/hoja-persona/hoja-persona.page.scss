@@ -1,49 +1,63 @@
 ion-content {
-  --background: url('/assets/psjs.jpg') no-repeat center center fixed;
+  --background: url('/assets/image.jpg') no-repeat center center fixed;
   --background-size: cover;
 
-.scroll-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  height: 100%; /* Ocupa toda la pantalla */
-  color: #5A3E2B;
-  background: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
-  border-radius: 10px;
-  text-align: center;
-}
-
-  .character-info {
+  .scroll-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    height: 100%; /* Ocupa toda la pantalla */
+    color: #5A3E2B;
+    background: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    border-radius: 10px;
+    text-align: center;
   }
 
-  .character-1 {
-    width: 450px;
-    height: 500px;
+  .logo-container {
+    margin-bottom: 30px;
+
+    .logo {
+      width: 100px; /* Ajusta el tamaño del logo */
+      height: auto;
+    }
+  }
+
+  .character-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.397); /* Fondo blanco semitransparente */
+    padding: 15px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    width: 100%;
   }
 
   .character-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    width: 150px; /* Ajustar el tamaño de la imagen */
+    height: 150px;
+    border-radius: 50%; /* Imagen redondeada */
+    margin-right: 20px; /* Espacio entre la imagen y los detalles */
+    border: 2px solid #FFFFFF; /* Borde blanco alrededor de la imagen */
+  }
+
+  .character-details {
+    text-align: left;
   }
 
   .character-name {
-    font-size: 24px;
+    font-size: 28px; /* Incrementar el tamaño de fuente */
     font-weight: bold;
-    color: #5A3E2B;
+    color: #000000; /* Cambiar a blanco para mejor contraste */
+    text-shadow: 2px 2px #000; /* Sombra en el texto para mejor legibilidad */
+    margin-bottom: 10px;
   }
 
   .character-stats p {
     margin: 5px 0;
     font-weight: bold;
+    color: #000000; /* Cambiar a blanco para mejor contraste */
+    text-shadow: 1px 1px #00000000; /* Sombra en el texto para mejor legibilidad */
   }
 
   .character-bars {
@@ -54,12 +68,12 @@ ion-content {
     margin-top: 10px;
   }
 
-.bar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin: 5px 0;
-}
+  .bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+  }
 
   .hp-bar, .xp-bar {
     height: 10px;
@@ -79,17 +93,49 @@ ion-content {
   }
 
   .stats-section {
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
     width: 100%;
     text-align: left;
     font-weight: bold;
+    color: #FFFFFF; /* Cambiar a blanco para mejor contraste */
   }
 
-.back-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #5A3E2B;
-}
+  .stat-container {
+    background: rgba(0, 0, 0, 0.507); /* Fondo negro semi-transparente */
+    padding: 15px;
+    border-radius: 10px;
+    width: 45%; /* Ajustar el ancho */
+    margin: 10px; /* Añadir margen entre los contenedores */
+  }
+
+  .dropdown-content {
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    color: #000000; /* Color de texto negro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px; /* Espacio entre el botón y el contenido desplegable */
+  }
+
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group ion-button {
+    --border-radius: 12px; /* Botones redondeados */
+    --padding: 10px 20px; /* Ajustar el padding */
+  }
+
+  .back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #5A3E2B;
+  }
 }

@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="background-image"></div> <!-- Fondo tipo pergamino -->
+  <div class="container">
+    <h1 class="title">AÑADIR A LA  MESA</h1>
+    
+    <ion-item class="input-item">
+      <ion-label position="floating">Nombre del usuario</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    
+
+    <ion-item class="input-item">
+      <ion-label position="floating">ID del usuario</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" class="continue-button" [routerLink]="['/mesas']">AÑADIR</ion-button>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/mesas']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

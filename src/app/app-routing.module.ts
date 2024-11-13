@@ -78,6 +78,10 @@ const routes: Routes = [
     path: 'caract1',
     loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
   },
+  {
+    path: 'agrusme',
+    loadChildren: () => import('./agrusme/agrusme.module').then( m => m.AgrusmePageModule)
+  },
 
 
 ];

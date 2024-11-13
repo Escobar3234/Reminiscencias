@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="scroll-container">
+    <h2>Inventario</h2>
+    <div class="items-container">
+      <div class="item" *ngFor="let item of items" (click)="selectedItem = item">
+        <ion-img [src]="item.image" class="item-image"></ion-img>
+        <p class="item-name">{{ item.name }}</p>
+        <div class="item-info" *ngIf="selectedItem === item">
+          {{ item.info }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Botón de retroceso -->
+  <ion-button fill="clear" class="back-button" [routerLink]="['/']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
+</ion-content>

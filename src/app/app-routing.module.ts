@@ -70,7 +70,11 @@ const routes: Routes = [
   {
     path: 'debilidades',
     loadChildren: () => import('./debilidades/debilidades.module').then( m => m.DebilidadesPageModule)
+  },  {
+    path: 'inventario',
+    loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
   },
+
 
 ];
 

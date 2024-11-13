@@ -82,6 +82,10 @@ const routes: Routes = [
     path: 'caract2',
     loadChildren: () => import('./caract2/caract2.module').then( m => m.Caract2PageModule)
   },
+  {
+    path: 'mesas-jugador',
+    loadChildren: () => import('./mesas-jugador/mesas-jugador.module').then( m => m.MesasJugadorPageModule)
+  },
 
 
 ];

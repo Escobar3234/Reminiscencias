@@ -1,0 +1,120 @@
+ion-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+  
+    .h1 {
+      background-color: black;
+    }
+  
+    .fondo-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+  
+      .logo-container {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 50px;
+  
+        .logo {
+          width: 100px;
+          height: auto;
+        }
+      }
+  
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Ajusta el nivel de opacidad según lo necesites */
+      }
+    }
+  
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 1;
+  
+      ion-button.custom-button {
+        font-family: 'Cinzel Decorative', cursive !important;
+        font-size: 1.2rem !important;
+        --background: rgba(196, 192, 192, 0.8) !important;
+        --color: rgb(12, 12, 12) !important;
+        margin: 10px !important;
+        padding: 10px 20px !important;
+         /* width: 50% !important;Botón ocupa la mitad del ancho del contenedor */
+        height: auto !important; /* Ajuste de la altura del botón */
+        box-shadow: none !important;
+        transition: background-color 0.3s ease !important;
+  
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+  
+        &:hover {
+          --background: rgba(255, 255, 255, 0.658) !important;
+        }
+      }
+  
+      .button-content {
+        display: flex;
+        align-items: center;
+      }
+  
+      .mesa-image {
+        width: 30px; /* Ajuste del tamaño de la imagen */
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+  
+      .text-content {
+        display: flex;
+        flex-direction: column;
+        text-align: left; /* Alineación del texto a la izquierda */
+      }
+  
+      .mesa-name {
+        font-size: 1rem; /* Ajuste del tamaño del texto */
+        font-weight: bold;
+      }
+  
+      .mesa-id {
+        font-size: 0.8rem; /* Ajuste del tamaño del texto */
+        color: #ddd;
+      }
+    }
+  
+    .header-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.5rem;
+      color: gold;
+    }
+  
+    ion-fab-button {
+      --background: rgba(252, 249, 249, 0) !important;
+      --color: white !important;
+      border: 1px solid white !important;
+      box-shadow: none !important;
+    }
+  }
+  

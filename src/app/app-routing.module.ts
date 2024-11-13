@@ -74,6 +74,10 @@ const routes: Routes = [
     path: 'inventario',
     loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
   },
+  {
+    path: 'caract1',
+    loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
+  },
 
 
 ];

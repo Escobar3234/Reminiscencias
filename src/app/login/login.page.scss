@@ -28,6 +28,10 @@ ion-content {
     }
   }
 
+  .h1{
+    text-align: center;
+  }
+
   .main-container {
     display: flex;
     flex-direction: column;
@@ -39,10 +43,12 @@ ion-content {
 
   .logo-container {
     margin-bottom: 30px;
+    text-align: center;
 
-    .logo {
+    .logo-container {
       width: 250px; /* Ajusta el tamaño del logo */
       height: auto;
+      align-items: center;
     }
   }
 

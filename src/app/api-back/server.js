@@ -30,16 +30,16 @@ const pool = new Pool({
 
 // Ruta para registrar usuario
 app.post('/register', async (req, res) => {
-  const { usuario, apodo, contrasena, rol } = req.body;
+  const { correoElectronico, apodo, contrasena, rol } = req.body;
 
   try {
-    if (!usuario || !apodo || !contrasena || !rol) {
+    if (!correoElectronico || !apodo || !contrasena || !rol) {
       return res.status(400).json({ error: 'Todos los campos son obligatorios' });
     }
 
     const userWithRoleExists = await pool.query(
-      'SELECT * FROM usuarios WHERE usuario = $1 AND rol = $2',
-      [usuario, rol]
+      'SELECT * FROM usuarios WHERE correo_electronico = $1 AND rol = $2',
+      [correoElectronico, rol]
     );
 
     if (userWithRoleExists.rows.length > 0) {
@@ -51,8 +51,8 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(contrasena, saltRounds);
 
     const result = await pool.query(
-      'INSERT INTO usuarios (usuario, apodo, contrasena, rol) VALUES ($1, $2, $3, $4) RETURNING *',
-      [usuario, apodo, hashedPassword, rol]
+      'INSERT INTO usuarios (correo_electronico, apodo, contrasena, rol) VALUES ($1, $2, $3, $4) RETURNING *',
+      [correoElectronico, apodo, hashedPassword, rol]
     );
     res.status(201).json(result.rows[0]); 
   } catch (error) {
@@ -63,12 +63,12 @@ app.post('/register', async (req, res) => {
 
 // Ruta para el inicio de sesión
 app.post('/ingreso', async (req, res) => {
-  const { usuario, contrasena } = req.body;
+  const { correoElectronico, contrasena } = req.body;
 
   try {
     const result = await pool.query(
-      'SELECT * FROM usuarios WHERE usuario = $1',
-      [usuario]
+      'SELECT * FROM usuarios WHERE correo_electronico = $1',
+      [correoElectronico]
     );
 
     if (result.rows.length > 0) {
@@ -80,10 +80,10 @@ app.post('/ingreso', async (req, res) => {
       if (validPassword) {
         res.json({ success: true, message: 'Autenticación exitosa', rol: user.rol });
       } else {
-        res.json({ success: false, message: 'Usuario o contraseña incorrectos' });
+        res.json({ success: false, message: 'Correo electrónico o contraseña incorrectos' });
       }
     } else {
-      res.json({ success: false, message: 'Usuario o contraseña incorrectos' });
+      res.json({ success: false, message: 'Correo electrónico o contraseña incorrectos' });
     }
   } catch (error) {
     console.error('Error en el inicio de sesión:', error);

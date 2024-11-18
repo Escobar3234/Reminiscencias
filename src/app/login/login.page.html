@@ -10,27 +10,26 @@
   <!-- Contenedor principal de inicio de sesión -->
   <div class="main-container">
     <h1>Iniciar sesión</h1>
-    <form class="main-container">
-    <ion-item class="input-item">
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+    <form class="main-container" (ngSubmit)="login()">
+      <ion-item class="input-item">
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="text" [(ngModel)]="correoElectronico" name="correoElectronico" required></ion-input>
       </ion-item>
       
       <ion-item class="input-item">
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="contrasena" name="contrasena"></ion-input>
+        <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
       </ion-item>
       
       <ion-item class="input-item">
         <ion-label>Selecciona tu rol</ion-label>
-        <ion-select [(ngModel)]="rol" name="rol" placeholder="Seleccione">
+        <ion-select [(ngModel)]="rol" name="rol" placeholder="Seleccione" required>
           <ion-select-option value="Máster">Máster</ion-select-option>
           <ion-select-option value="Jugador">Jugador</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-button expand="block" class="login-button" (click)="login()">Ingresar</ion-button>
+      <ion-button expand="block" class="login-button" type="submit">Ingresar</ion-button>
       <ion-button expand="block" class="register-button" (click)="register()">Registrarse</ion-button>
     </form>
-    
   </div>
 </ion-content>

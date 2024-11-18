@@ -8,7 +8,7 @@ import { ToastController, NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  usuario: string = '';
+  correoElectronico: string = '';
   contrasena: string = '';
   rol: string = ''; 
 
@@ -21,9 +21,9 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   async login() {
-    if (this.usuario && this.contrasena && this.rol) {
+    if (this.correoElectronico && this.contrasena && this.rol) {
       const data = {
-        usuario: this.usuario,
+        correoElectronico: this.correoElectronico,
         contrasena: this.contrasena,
         rol: this.rol,
       };
@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
             }
           } else {
             const toast = await this.toastController.create({
-              message: 'Usuario o contraseña incorrectos',
+              message: 'Correo electrónico o contraseña incorrectos',
               duration: 2000,
               color: 'danger',
             });

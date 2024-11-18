@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  usuario: string = '';
+  correoElectronico: string = '';
   apodo: string = '';
   contrasena: string = '';
   rol: string = '';
@@ -24,9 +24,32 @@ export class RegisterPage {
   }
 
   async register() {
-    if (this.usuario && this.apodo && this.contrasena && this.rol) {
+    if (this.correoElectronico && this.apodo && this.contrasena && this.rol) {
+      // Validar correo electrónico
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(this.correoElectronico)) {
+        const toast = await this.toastController.create({
+          message: 'Por favor, ingrese un correo electrónico válido',
+          duration: 2000,
+          color: 'danger',
+        });
+        toast.present();
+        return;
+      }
+
+      // Validar longitud de la contraseña
+      if (this.contrasena.length < 6) {
+        const toast = await this.toastController.create({
+          message: 'La contraseña debe tener al menos 6 caracteres',
+          duration: 2000,
+          color: 'danger',
+        });
+        toast.present();
+        return;
+      }
+
       const data = {
-        usuario: this.usuario,
+        correoElectronico: this.correoElectronico,
         apodo: this.apodo,
         contrasena: this.contrasena,
         rol: this.rol,
@@ -56,7 +79,7 @@ export class RegisterPage {
           // Mostrar mensaje si el usuario ya existe
           if (error.status === 409) {
             const toast = await this.toastController.create({
-              message: 'El usuario con este rol ya está registrado',
+              message: 'El usuario con este correo ya está registrado',
               duration: 2000,
               color: 'danger',
             });

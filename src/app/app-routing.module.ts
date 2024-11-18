@@ -70,13 +70,18 @@ const routes: Routes = [
   {
     path: 'debilidades',
     loadChildren: () => import('./debilidades/debilidades.module').then( m => m.DebilidadesPageModule)
-  },  {
+  },
+  {
     path: 'inventario',
     loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
   },
   {
     path: 'caract1',
     loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
+  },
+  {
+    path: 'agrusme',
+    loadChildren: () => import('./agrusme/agrusme.module').then( m => m.AgrusmePageModule)
   },
   {
     path: 'caract2',

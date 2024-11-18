@@ -1,69 +1,116 @@
+/* Fondo general */
 .fondo-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-  
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0);
-    }
+  position: fixed; /* Cambiado a fixed para asegurar que cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/image.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Ajuste perfecto */
+  background-position: center; /* Centrado de la imagen */
+  background-repeat: no-repeat;
+  z-index: -1;
+  display: flex; /* Usar flexbox para centrar elementos dentro */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Contenedor del logo */
+.logo-container {
+  margin-bottom: 30px;
+  text-align: center; /* Centrado del texto dentro del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Elementos desplegables */
+.dropdown-content {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+  color: black; /* Texto en negro */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  z-index: 1;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 90%; /* Evita que el contenido se salga del ancho */
+  margin: auto;
+  display: flex;
+  flex-direction: column; /* Los items se apilan verticalmente */
+  align-items: center; /* Centrado de los elementos */
+}
+
+.dropdown-item {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: black; /* Texto negro */
+  padding: 12px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  max-width: 100%; /* Evita desbordamiento */
+  text-align: center; /* Texto centrado */
+}
+
+/* Botón de retroceso */
+.back-button {
+  background: transparent !important; /* Fondo transparente */
+  color: white !important; /* Color del ícono */
+  border: 1px solid white !important; /* Borde blanco */
+  box-shadow: none !important; /* Sin sombra */
+  max-width: 100%; /* Asegura que no se desborde */
+  margin: 10px auto; /* Centrado y espacio */
+  padding: 10px; /* Espaciado interno */
+  display: inline-block; /* Se asegura de que se ajuste a su contenido */
+}
+
+/* Asegura que los elementos se ajusten a la pantalla */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Elimina el scroll horizontal */
+  text-align: center; /* Texto centrado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Asegura que la altura del body ocupe toda la pantalla */
+  flex-direction: column; /* Se asegura de que los elementos apunten hacia abajo */
+}
+
+/* General para ion-item */
+ion-item {
+  background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 10px auto; /* Espaciado vertical */
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+  max-width: 90%; /* Limita el ancho al 90% de la pantalla */
+  display: flex;
+  justify-content: center; /* Centrado del contenido */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Centrado de texto dentro de ion-label */
+ion-label {
+  font-size: 16px; /* Ajuste de tamaño de texto */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Texto centrado */
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+
+/* Compatibilidad para pantallas pequeñas */
+@media (max-width: 600px) {
+  .logo-container .logo {
+    width: 80%; /* Reduce el tamaño del logo en pantallas pequeñas */
   }
 
-  .logo-container {
-    margin-bottom: 30px;
-
-    .logo {
-      width: 250px; /* Ajusta el tamaño del logo */
-      height: auto;
-    }
+  ion-item {
+    padding: 8px; /* Espaciado reducido */
+    font-size: 14px; /* Tamaño de texto más pequeño */
   }
 
-  
-  .dropdown-button {
-    --background: #007bff; /* Color de fondo del botón */
-    --border-color: #007bff;
-    --color: white; /* Color del texto */
-    --border-radius: 50px;
-    --padding: 10px 20px;
-    width: 100%;
-    margin-top: 10px;
-  }
-  
   .dropdown-content {
-    background-color: hsl(0, 0%, 100%); /* Fondo blanco */
-    color: black; /* Color del texto en negro */
-    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
-    z-index: 1;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 6px; /* Reduce el relleno en pantallas pequeñas */
   }
-  
-  .dropdown-item {
-    background-color: #9b9393; /* Fondo gris claro */
-    color: black; /* Texto en negro */
-    padding: 12px 16px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-bottom: 4px;
-  }
-  .back-button {
-    --background: rgba(252, 249, 249, 0) !important; /* Transparente */
-    --color: white !important; /* Color del ícono */
-    border: 1px solid white !important;
-    box-shadow: none !important;
-    
-  }
-
-  
+}

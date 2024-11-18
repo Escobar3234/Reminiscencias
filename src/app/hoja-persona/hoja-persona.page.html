@@ -1,46 +1,74 @@
 <ion-content>
+  <div class="main-container">
+    <div class="logo-container">
+      <img src="/assets/2.png" alt="Logo" class="logo">
+    </div>
   <div class="scroll-container">
-    <!-- Información del personaje -->
     <div class="character-info">
-      <h2 class="character-name">MATEO</h2>
       <ion-img src="assets/personaje.png" class="character-image"></ion-img>
-
-
-      <div class="character-stats">
-        <p>ALTURA: 1.75</p>
-        <p>EDAD: 21</p>
-        <p>NIVEL: 1</p>
-      </div>
-
-      <!-- Barras de estadísticas -->
-      <div class="character-bars">
-        <div class="bar">
-          <span>HP:</span>
-          <div class="hp-bar"></div>
-        </div>
-        <div class="bar">
-          <span>XP:</span>
-          <div class="xp-bar"></div>
+      <div class="character-details">
+        <h2 class="character-name">MATEO</h2>
+        <div class="character-stats">
+          <p>ALTURA: 1.75</p>
+          <p>EDAD: 21</p>
+          <p>NIVEL: 1</p>
         </div>
       </div>
     </div>
 
-    <!-- Sección de estadísticas -->
+
+    <div class="character-bars">
+      <div class="bar">
+        <span>HP:</span>
+        <div class="hp-bar"></div>
+      </div>
+      <div class="bar">
+        <span>XP:</span>
+        <div class="xp-bar"></div>
+      </div>
+    </div>
+
     <div class="stats-section">
-      <h3>ATAQUE</h3>
-      <p>Característica: -1</p>
-      <p>Bonus: 0</p>
-      <p>Item: 0</p>
-      <p>Habilidad: -1</p>
-      <p>Total: -2</p>
-
-      <h3>HIT-POINTS</h3>
-      <p>Base: 20</p>
-      <p>Daño sufrido: 28</p>
-      <p>Total de vida: -8</p>
+      <div class="stat-container">
+        <ion-button expand="block" shape="round" fill="outline" (click)="toggleDropdown('ataque')">Ataque</ion-button>
+        <div *ngIf="dropdownVisible === 'ataque'" class="dropdown-content">
+          <p>Característica: -1</p>
+          <p>Bonus: 0</p>
+          <p>Item: 0</p>
+          <p>Habilidad: -1</p>
+          <p>Total: -2</p>
+        </div>
+      </div>
+      <div class="stat-container">
+        <ion-button expand="block" shape="round" fill="outline" (click)="toggleDropdown('hitpoints')">Hit-Points</ion-button>
+        <div *ngIf="dropdownVisible === 'hitpoints'" class="dropdown-content">
+          <p>Base: 20</p>
+          <p>Daño sufrido: 28</p>
+          <p>Total de vida: -8</p>
+        </div>
+      </div>
+    </div>
+    <div class="stats-section">
+      <div class="stat-container">
+        <ion-button expand="block" shape="round" fill="outline" (click)="toggleDropdown('bloqueo')">Bloqueo</ion-button>
+        <div *ngIf="dropdownVisible === 'bloqueo'" class="dropdown-content">
+          <p>Bases: 10</p>
+          <p>Constitución: 10</p>
+          <p>Items: 11</p>
+          <p>Total: 31</p>
+        </div>
+      </div>
+      <div class="stat-container">
+        <ion-button expand="block" shape="round" fill="outline" (click)="toggleDropdown('esquivar')">Esquivar</ion-button>
+        <div *ngIf="dropdownVisible === 'esquivar'" class="dropdown-content">
+          <p>Base: -1</p>
+          <p>Destreza: 0</p>
+          <p>Items: 0</p>
+          <p>Total: -1</p>
+        </div>
+      </div>
     </div>
 
-    <!-- Botones alineados en la parte inferior -->
     <div class="button-group">
       <ion-button fill="solid" color="primary" [routerLink]="['/habilidades']">
         <ion-icon name="cog" slot="start"></ion-icon>
@@ -54,15 +82,20 @@
         <ion-icon name="skull" slot="start"></ion-icon>
         Debilidades
       </ion-button>
+<<<<<<< HEAD
       <ion-button fill="solid" color="tertiary" [routerLink]="['/inventario']">
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> ec6aa94c2d6ab99975aa26726fdc416047f0a13b
+      <ion-button fill="solid" color="tertiary" [routerLink]="['/caract1']">
+>>>>>>> 5f26eda9af40c4c59931210738c7c944b6e03811
         <ion-icon name="construct" slot="start"></ion-icon>
         Características
       </ion-button>
-      </div>
-
-    <!-- Botón de retroceso -->
+    </div>
     <ion-button fill="clear" class="back-button" [routerLink]="['/']">
       <ion-icon name="arrow-back"></ion-icon>
     </ion-button>
   </div>
-</ion-content>

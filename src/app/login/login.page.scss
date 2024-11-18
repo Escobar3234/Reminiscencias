@@ -28,6 +28,10 @@ ion-content {
     }
   }
 
+  .h1{
+    text-align: center;
+  }
+
   .main-container {
     display: flex;
     flex-direction: column;
@@ -39,10 +43,12 @@ ion-content {
 
   .logo-container {
     margin-bottom: 30px;
+    text-align: center;
 
-    .logo {
+    .logo-container {
       width: 250px; /* Ajusta el tamaño del logo */
       height: auto;
+      align-items: center;
     }
   }
 
@@ -74,7 +80,7 @@ ion-content {
 
   ion-button {
     font-family: 'Cinzel Decorative', cursive !important;
-    font-size: 1.5rem !important;
+    font-size: 1.0rem !important;
     --background: rgba(255, 255, 255, 0.2) !important;
     --color: white !important;
     border: 1px solid white !important;

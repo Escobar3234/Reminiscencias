@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hoja-persona.page.scss'],
 })
 export class HojaPersonaPage implements OnInit {
+  dropdownVisible: string | null = null;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  toggleDropdown(section: string) {
+    this.dropdownVisible = this.dropdownVisible === section ? null : section;
+  }
 }

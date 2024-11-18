@@ -1,35 +1,38 @@
-<ion-content>
-  <div class="fondo-container"></div>
-  <div class="main-container">
-    <div class="logo-container">
-      <img src="/assets/2.png" alt="Logo" class="logo">
-    </div>
-    <div class="form-container">
-      <form (ngSubmit)="register()">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Correo Electrónico</ion-label>
-          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-select [(ngModel)]="role" name="role" placeholder="Seleccionar Rol" required>
-            <ion-select-option value="jugador">Jugador</ion-select-option>
-            <ion-select-option value="master">Maestro</ion-select-option>
-          </ion-select>
-        </ion-item>
-        <ion-button expand="full" type="submit" [disabled]="!formValid()">Registrar</ion-button>
-      </form>
-      
-    </div>
-    
+<ion-content class="ion-padding">
+  <div class="logo-container">
+    <img src="/assets/2.png" alt="Logo"> <!-- Asegúrate de que la ruta sea correcta -->
   </div>
+
+  <form class="main-container" (ngSubmit)="register()">
+    <div class="fondo-container"></div>
+    
+    <ion-item>
+      <ion-label position="floating">Correo Electrónico</ion-label>
+      <ion-input type="email" [(ngModel)]="correoElectronico" name="correoElectronico" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Apodo</ion-label>
+      <ion-input type="text" [(ngModel)]="apodo" name="apodo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required minlength="6"></ion-input>
+    </ion-item>
+
+    <!-- Nuevo campo para seleccionar el rol -->
+    <ion-item>
+      <ion-label>Rol</ion-label>
+      <ion-select [(ngModel)]="rol" name="rol" placeholder="Selecciona un rol" required>
+        <ion-select-option value="master">Máster</ion-select-option>
+        <ion-select-option value="jugador">Jugador</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit">Registrarse</ion-button>
+  </form>  
+
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button [routerLink]="['/login']">
       <ion-icon name="arrow-back"></ion-icon>

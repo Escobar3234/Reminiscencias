@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const path = require('path');
 const { Pool } = require('pg');
-const bcrypt = require('bcrypt'); // Importar bcrypt
+const bcrypt = require('bcrypt');
 
 const app = express();
 

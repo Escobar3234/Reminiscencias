@@ -43,7 +43,7 @@ ion-content {
     padding: 80px;
     background-color: rgba(0, 0, 0, 0.404); /* Fondo del formulario con transparencia */
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
     z-index: 1; /* Asegura que el contenedor principal esté por encima del fondo */
     margin: auto; /* Centra horizontalmente y verticalmente */
   }

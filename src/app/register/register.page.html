@@ -4,32 +4,41 @@
     <img src="/assets/2.png" alt="Logo"> <!-- Asegúrate de que la ruta sea correcta -->
   </div>
 
-  <div class="fondo-container"></div>
-    <form (ngSubmit)="register()">
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text" [(ngModel)]="usuario" name="nombre" required></ion-input>
-      </ion-item>
+  <form class="main-container">
+    <div class="fondo-container"></div>
+      <form (ngSubmit)="register()">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" name="nombre" required></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Apodo</ion-label>
-        <ion-input type="text" [(ngModel)]="apodo" name="apodo" required></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apodo</ion-label>
+          <ion-input type="text" [(ngModel)]="apodo" name="apodo" required></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
-      </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
+        </ion-item>
 
-      <!-- Nuevo campo para seleccionar el rol -->
-      <ion-item>
-        <ion-label>Rol</ion-label>
-        <ion-select [(ngModel)]="rol" name="rol" placeholder="Selecciona un rol" required>
-          <ion-select-option value="master">Máster</ion-select-option>
-          <ion-select-option value="jugador">Jugador</ion-select-option>
-        </ion-select>
-      </ion-item>
+        <!-- Nuevo campo para seleccionar el rol -->
+        <ion-item>
+          <ion-label>Rol</ion-label>
+          <ion-select [(ngModel)]="rol" name="rol" placeholder="Selecciona un rol" required>
+            <ion-select-option value="master">Máster</ion-select-option>
+            <ion-select-option value="jugador">Jugador</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-      <ion-button expand="block" type="submit">Registrarse</ion-button>
-    </form>
+        <ion-button expand="block" type="submit">Registrarse</ion-button>
+      </form>  
+      <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button [routerLink]="['/login']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+      </ion-fab>
+  </form> 
+
+    
 </ion-content>

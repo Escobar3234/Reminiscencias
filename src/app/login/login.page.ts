@@ -10,7 +10,6 @@ import { ToastController, NavController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   correoElectronico: string = '';
   contrasena: string = '';
-  rol: string = ''; 
 
   constructor(
     private http: HttpClient,
@@ -21,15 +20,15 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   async login() {
-    if (this.correoElectronico && this.contrasena && this.rol) {
+    if (this.correoElectronico && this.contrasena) {
       const data = {
         correoElectronico: this.correoElectronico,
         contrasena: this.contrasena,
-        rol: this.rol,
       };
 
       this.http.post('http://localhost:3000/ingreso', data).subscribe(
         async (response: any) => {
+          console.log(response); // Verifica la respuesta aquí
           if (response.success) {
             const toast = await this.toastController.create({
               message: 'Inicio de sesión exitoso',
@@ -38,9 +37,12 @@ export class LoginPage implements OnInit {
             });
             toast.present();
 
-            if (this.rol === 'Máster') {
+            // Redirección basada en el rol devuelto por el servidor
+            if (response.rol === 'Máster') {
+              console.log("Redirigiendo a /mesas"); // Log para verificar
               this.navCtrl.navigateRoot('/mesas'); 
-            } else if (this.rol === 'Jugador') {
+            } else if (response.rol === 'jugador') {
+              console.log("Redirigiendo a /mesas-jugador"); // Log para verificar
               this.navCtrl.navigateRoot('/mesas-jugador'); 
             }
           } else {

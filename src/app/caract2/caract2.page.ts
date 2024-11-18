@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-caract1',
-  templateUrl: './caract1.page.html',
-  styleUrls: ['./caract1.page.scss'],
+  selector: 'app-caract2',
+  templateUrl: './caract2.page.html',
+  styleUrls: ['./caract2.page.scss'],
 })
-export class Caract1Page implements OnInit {
+export class Caract2Page implements OnInit {
   dropdownVisible: string | null = null; // Cambiamos a string para indicar qué dropdown está visible
 
   constructor() {}

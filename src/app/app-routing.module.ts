@@ -70,7 +70,8 @@ const routes: Routes = [
   {
     path: 'debilidades',
     loadChildren: () => import('./debilidades/debilidades.module').then( m => m.DebilidadesPageModule)
-  },  {
+  },
+  {
     path: 'inventario',
     loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
   },
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path: 'agrusme',
     loadChildren: () => import('./agrusme/agrusme.module').then( m => m.AgrusmePageModule)
+  },
+  {
+    path: 'caract2',
+    loadChildren: () => import('./caract2/caract2.module').then( m => m.Caract2PageModule)
   },
 
 

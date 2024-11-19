@@ -9,34 +9,29 @@ export class HabilidadesPage {
   skills = [
     {
       name: 'fuerza',
-      image: '/assets/av1.jpg',
-      info: 'aumenta su fuerza contante mas pasa el tiempo .',
-      showInfo: false
-    },
-    {
-      name: 'escudo de atenea',
-      image: '/assets/av2.jpg',
-      info: 'escudo que te sube el coraje y la salud  .',
+      media: 'assets/fuerza.mp4',
+      mediaType: 'video',
+      info: 'Aumenta su fuerza contante más pasa el tiempo.',
       showInfo: false
     },
     {
       name: 'mana',
-      image: '/assets/av3.jpg',
-      info: 'suministra el valance del mana  .',
+      media: 'assets/mana.mp4',
+      mediaType: 'video',
+      info: 'Suministra el balance del mana.',
       showInfo: false
     },
     {
       name: 'cruz de plata',
-      image: '/assets/av4.jpg',
-      info: 'cruz de palatab .',
+      media: 'assets/av4.jpg',
+      mediaType: 'image',
+      info: 'Cruz de plata.',
       showInfo: false
     },
-    
-    // Agrega más habilidades según sea necesario
+
   ];
 
   toggleInfo(skill: any) {
-    // Alterna la propiedad showInfo de la habilidad seleccionada
     skill.showInfo = !skill.showInfo;
   }
 }

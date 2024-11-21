@@ -1,37 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-habilidades',
   templateUrl: './habilidades.page.html',
   styleUrls: ['./habilidades.page.scss'],
 })
-export class HabilidadesPage {
-  skills = [
-    {
-      name: 'fuerza',
-      media: 'assets/fuerza.mp4',
-      mediaType: 'video',
-      info: 'Aumenta su fuerza contante más pasa el tiempo.',
-      showInfo: false
-    },
-    {
-      name: 'mana',
-      media: 'assets/mana.mp4',
-      mediaType: 'video',
-      info: 'Suministra el balance del mana.',
-      showInfo: false
-    },
-    {
-      name: 'cruz de plata',
-      media: 'assets/av4.jpg',
-      mediaType: 'image',
-      info: 'Cruz de plata.',
-      showInfo: false
-    },
-
+export class HabilidadesPage implements OnInit {
+  habilidades = [
+    { name: 'Fuerza', image: '/assets/fuerza.jpg', description: 'Aumenta el daño físico.' },
+    { name: 'Velocidad', image: '/assets/velocidad.jpg', description: 'Incrementa la rapidez de movimiento.' },
+    { name: 'Inteligencia', image: '/assets/inteligencia.jpg', description: 'Mejora las habilidades mágicas.' },
+    { name: 'Sigilo', image: '/assets/sigilo.jpg', description: 'Aumenta la capacidad de pasar desapercibido.' },
+    { name: 'Carisma', image: '/assets/carisma.jpg', description: 'Mejora las interacciones sociales.' },
+    { name: 'Precisión', image: '/assets/precision.png', description: 'Aumenta la probabilidad de acertar ataques.' },
+    { name: 'Defensa', image: '/assets/defensa.jpg', description: 'Reduce la probabilidad de recibir daño.' },
+    { name: 'Reflejos', image: '/assets/reflejos.jpg', description: 'Mejora las reacciones en combate.' },
+    { name: 'Agilidad', image: '/assets/agilidad.jpg', description: 'Facilita los movimientos evasivos.' },
   ];
 
-  toggleInfo(skill: any) {
-    skill.showInfo = !skill.showInfo;
+  habilidadSeleccionada: any = null;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  seleccionarHabilidad(habilidad: any): void {
+    this.habilidadSeleccionada = habilidad;
   }
 }

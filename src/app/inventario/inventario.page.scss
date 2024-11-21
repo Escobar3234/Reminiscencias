@@ -1,54 +1,81 @@
-.scroll-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .items-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .item {
-    text-align: center;
-    width: 150px;
-    cursor: pointer;
-  }
-  
-  .item-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .item-name {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #5A3E2B;
-  }
-  
-  .item-info {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    padding: 10px;
-  }
+/* Estilo general del contenido */
+ion-content {
+  --background: url('/assets/psjs.jpg') no-repeat center center fixed;
+  --background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  
-  .back-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #5A3E2B;
-  }
+/* Contenedor de la cuadrícula */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-  ion-content {
-    --background: url('/assets/psjs.jpg') no-repeat center center fixed;
-    --background-size: cover;
-  }
+/* Estilo para cada ítem */
+.inventory-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenido del ítem */
+.item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Imagen del ítem */
+.item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Información del ítem */
+.item-info h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-info p {
+  font-size: 0.9rem;
+  margin: 5px 0 10px;
+  line-height: 1.2;
+}
+
+/* Botón */
+ion-button {
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 100%;
+  max-width: 100px;
+  border-radius: 8px;
+}
+
+.back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #5A3E2B;
+}

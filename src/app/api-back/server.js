@@ -80,7 +80,7 @@ app.post('/ingreso', async (req, res) => {
       if (validPassword) {
         // Obtener las mesas del usuario
         const mesasResult = await pool.query(
-          `SELECT mesas.*
+          `SELECT mesas.* 
            FROM mesas
            JOIN jugadores_mesas ON mesas.id_mesas = jugadores_mesas.mesas_id_mesas
            WHERE jugadores_mesas.usuarios_id_usuario = $1`,
@@ -100,23 +100,51 @@ app.post('/ingreso', async (req, res) => {
   }
 });
 
-// Ruta para crear una nueva mesa
+// Ruta para crear una nueva mesa (sin verificar el rol de Master)
 app.post('/crear-mesa', async (req, res) => {
-  const { nombreMesa, cantidadJugadores } = req.body;
+  const { nombreMesa, cantidadJugadores } = req.body;  // Solo recibimos nombre y cantidad de jugadores
 
   try {
+    // Verificar que se recibieron los datos necesarios
+    if (!nombreMesa || !cantidadJugadores) {
+      return res.status(400).json({ error: 'El nombre de la mesa y la cantidad de jugadores son obligatorios' });
+    }
+
+    // Insertar la nueva mesa sin verificar el rol del idMaster
     const result = await pool.query(
       'INSERT INTO mesas (nombre_mesa, capacidad) VALUES ($1, $2) RETURNING *',
-      [nombreMesa, cantidadJugadores]
+      [nombreMesa, cantidadJugadores]  // Solo se inserta nombre y capacidad
     );
-    res.status(201).json(result.rows[0]); 
+    
+    res.status(201).json(result.rows[0]);  // Devolver la mesa creada
   } catch (error) {
     console.error('Error al crear la mesa:', error);
     res.status(500).json({ error: 'Error al crear la mesa' });
   }
 });
 
-// Ruta para obtener todas las mesas
+// Ruta para obtener las mesas de un master específico
+app.get('/mesas/:idMaster', async (req, res) => {
+  const { idMaster } = req.params;
+
+  try {
+    // Asegurarse de que idMaster está presente
+    if (!idMaster) {
+      return res.status(400).json({ error: 'El id del master es obligatorio' });
+    }
+
+    const result = await pool.query(
+      'SELECT * FROM mesas WHERE id_master = $1',  // Filtramos las mesas por id_master
+      [idMaster]
+    );
+    res.status(200).json(result.rows);  // Solo devolver las mesas que pertenecen al idMaster
+  } catch (error) {
+    console.error('Error al obtener las mesas del master:', error);
+    res.status(500).json({ error: 'Error al obtener las mesas' });
+  }
+});
+
+// Ruta para obtener todas las mesas (para administración, si es necesario)
 app.get('/mesas', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM mesas');
@@ -155,7 +183,7 @@ app.post('/unirse-mesa', async (req, res) => {
 });
 
 // Ruta para guardar información del personaje
-app.post('/guardar-personaje', upload.single('imagen'), async (req, res) => {
+app.post('/guardar-personaje', upload.single('img_perfil'), async (req, res) => {
   const { nombrePersonaje, edad, altura, idMesa, idUsuario } = req.body;
 
   console.log('Datos recibidos del cliente:', { nombrePersonaje, edad, altura, idMesa, idUsuario });
@@ -165,77 +193,18 @@ app.post('/guardar-personaje', upload.single('imagen'), async (req, res) => {
     console.log('Nombre del archivo de imagen:', imagen);
 
     const result = await pool.query(
-      'UPDATE jugadores_mesas SET nombre_personaje = $1, edad = $2, altura = $3, img_perfil = $4 WHERE usuarios_id_usuario = $5 AND mesas_id_mesas = $6 RETURNING *',
-      [nombrePersonaje, edad, altura, imagen, idUsuario, idMesa]
+      'UPDATE jugadores_mesas SET nombre_personaje = $1, edad = $2, altura = $3, imagen = $4 WHERE usuarios_id_usuario = $5 AND mesas_id_mesas = $6 RETURNING *',
+      [nombrePersonaje, edad, altura, img_perfil, idUsuario, idMesa]
     );
-    
-    console.log('Resultado de la consulta:', result.rows[0]);
+
     res.status(200).json(result.rows[0]);
   } catch (error) {
-    console.error('Error al guardar el personaje:', error);
-    res.status(500).json({ error: 'Error al guardar el personaje' });
+    console.error('Error al guardar los datos del personaje:', error);
+    res.status(500).json({ error: 'Error al guardar los datos del personaje' });
   }
 });
 
-// Ruta para obtener los detalles del usuario
-app.get('/usuario/:idUsuario', async (req, res) => {
-  const { idUsuario } = req.params;
-
-  try {
-    const result = await pool.query(
-      'SELECT apodo FROM usuarios WHERE id_usuario = $1',
-      [idUsuario]
-    );
-    if (result.rows.length > 0) {
-      res.status(200).json(result.rows[0]);
-    } else {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-    }
-  } catch (error) {
-    console.error('Error al obtener los detalles del usuario:', error);
-    res.status(500).json({ error: 'Error al obtener los detalles del usuario' });
-  }
-});
-
-// Ruta para obtener las mesas de un usuario
-app.get('/mesas-usuario/:idUsuario', async (req, res) => {
-  const { idUsuario } = req.params;
-
-  try {
-    const result = await pool.query(
-      `SELECT mesas.*
-       FROM mesas
-       JOIN jugadores_mesas ON mesas.id_mesas = jugadores_mesas.mesas_id_mesas
-       WHERE jugadores_mesas.usuarios_id_usuario = $1`,
-      [idUsuario]
-    );
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error al obtener las mesas del usuario:', error);
-    res.status(500).json({ error: 'Error al obtener las mesas del usuario' });
-  }
-});
-
-// Ruta para obtener los jugadores de una mesa
-app.get('/jugadores-mesa/:idMesa', async (req, res) => {
-  const { idMesa } = req.params;
-
-  try {
-    const result = await pool.query(
-      `SELECT usuarios.apodo, usuarios.correo_electronico
-       FROM jugadores_mesas
-       JOIN usuarios ON jugadores_mesas.usuarios_id_usuario = usuarios.id_usuario
-       WHERE jugadores_mesas.mesas_id_mesas = $1`,
-      [idMesa]
-    );
-    res.status(200).json(result.rows);
-  } catch (error) {
-    console.error('Error al obtener las mesas del usuario:', error);
-    res.status(500).json({ error: 'Error al obtener las mesas del usuario' });
-  }
-});
-
-const PORT = 3000;
-app.listen(PORT, 'localhost', () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });

@@ -1,26 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inventario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <div class="scroll-container">
-    <h2>Inventario</h2>
-    <div class="items-container">
-      <div class="item" *ngFor="let item of items" (click)="selectedItem = item">
-        <ion-img [src]="item.image" class="item-image"></ion-img>
-        <p class="item-name">{{ item.name }}</p>
-        <div class="item-info" *ngIf="selectedItem === item">
-          {{ item.info }}
+  <div class="inventory-grid">
+    <ion-card *ngFor="let item of items" class="inventory-item">
+      <div class="item-content">
+        <img [src]="item.image" alt="{{ item.name }}" class="item-image" />
+        <div class="item-info">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.info }}</p>
         </div>
+        <ion-button
+          fill="outline"
+          (click)="toggleEquip(item)"
+          [color]="item.equipped ? 'success' : 'warning'"
+        >
+          {{ item.equipped ? 'Equipado' : 'No equipado' }}
+        </ion-button>
       </div>
-    </div>
-  </div>
-  <!-- Botón de retroceso -->
-<<<<<<< HEAD
+    </ion-card>
+  </div>  
   <ion-button fill="clear" class="back-button" [routerLink]="['/hoja-persona']">
     <ion-icon name="arrow-back"></ion-icon>
   </ion-button>
-=======
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button [routerLink]="['/hoja-persona']">
-      <ion-icon name="arrow-back"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
->>>>>>> 5f26eda9af40c4c59931210738c7c944b6e03811
 </ion-content>

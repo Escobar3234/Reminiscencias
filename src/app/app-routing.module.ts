@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./mesas/mesas.module').then( m => m.MesasPageModule)
   },
   {
-    path: 'perma1',
+    path: 'perma1/:idMesa',  // Ruta con el parámetro idMesa
     loadChildren: () => import('./perma1/perma1.module').then( m => m.Perma1PageModule)
   },
   {
@@ -90,9 +90,7 @@ const routes: Routes = [
   {
     path: 'mesas-jugador',
     loadChildren: () => import('./mesas-jugador/mesas-jugador.module').then( m => m.MesasJugadorPageModule)
-  },
-
-
+  }
 ];
 
 @NgModule({

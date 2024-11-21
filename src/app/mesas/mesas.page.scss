@@ -2,15 +2,11 @@ ion-content {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  color: white;
   text-align: center;
-
-  .h1 {
-    background-color: black;
-  }
+  color: white;
 
   .fondo-container {
     position: absolute;
@@ -24,17 +20,6 @@ ion-content {
     background-repeat: no-repeat;
     z-index: -1;
 
-    .logo-container {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 50px;
-
-      .logo {
-        width: 100px;
-        height: auto;
-      }
-    }
-
     &:after {
       content: '';
       position: absolute;
@@ -42,38 +27,65 @@ ion-content {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Ajusta el nivel de opacidad según lo necesites */
+      background-color: rgba(0, 0, 0, 0.5); /* Opacidad para oscurecer el fondo */
     }
   }
 
-  .button-container {
+  .logo-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  h1 {
+    margin: 20px 0;
+    font-size: 1.8rem;
+    font-family: 'Cinzel Decorative', cursive;
+    color: gold;
+  }
+
+  /* Contenedor centrado */
+  .contenedor-mesas {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%; /* Se adapta a pantallas pequeñas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Centra el contenido del contenedor */
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+
+  .mesas-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho del contenedor */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+  }
+
+  ion-list {
+    width: 100%;
+  }
+
+  ion-button.custom-button {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: white;
+    border: 1px solid white;
+    margin: 10px 0;
+    text-align: left;
+    display: flex;
     align-items: center;
-    gap: 20px;
-    z-index: 1;
-
-    ion-button.custom-button {
-      font-family: 'Cinzel Decorative', cursive !important;
-      font-size: 1.2rem !important;
-      --background: rgba(196, 192, 192, 0.8) !important;
-      --color: rgb(12, 12, 12) !important;
-      margin: 10px !important;
-      padding: 10px 20px !important;
-       /* width: 50% !important;Botón ocupa la mitad del ancho del contenedor */
-      height: auto !important; /* Ajuste de la altura del botón */
-      box-shadow: none !important;
-      transition: background-color 0.3s ease !important;
-
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      &:hover {
-        --background: rgba(255, 255, 255, 0.658) !important;
-      }
-    }
+    justify-content: flex-start;
 
     .button-content {
       display: flex;
@@ -81,39 +93,47 @@ ion-content {
     }
 
     .mesa-image {
-      width: 30px; /* Ajuste del tamaño de la imagen */
-      height: 30px;
+      width: 40px;
+      height: 40px;
       margin-right: 10px;
-      border-radius: 5px;
+      border-radius: 50%;
     }
 
     .text-content {
       display: flex;
       flex-direction: column;
-      text-align: left; /* Alineación del texto a la izquierda */
+      align-items: flex-start;
     }
 
     .mesa-name {
-      font-size: 1rem; /* Ajuste del tamaño del texto */
+      font-size: 1rem;
       font-weight: bold;
     }
 
     .mesa-id {
-      font-size: 0.8rem; /* Ajuste del tamaño del texto */
-      color: #ddd;
+      font-size: 0.8rem;
+      color: #aaa;
     }
   }
 
-  .header-title {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.5rem;
-    color: gold;
+  .button-container {
+    display: flex; /* Flexbox para el centrado */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-top: 20px;
+    width: 100%; /* Hacer que el contenedor ocupe todo el ancho disponible */
+    text-align: center;
+  }
+
+  ion-button.full-width {
+    width: auto; /* Ajustar el botón al tamaño de su contenido */
+    padding: 0 20px; /* Añadir padding para controlar el tamaño del botón */
   }
 
   ion-fab-button {
-    --background: rgba(252, 249, 249, 0) !important;
-    --color: white !important;
-    border: 1px solid white !important;
-    box-shadow: none !important;
+    --background: rgba(252, 249, 249, 0);
+    --color: white;
+    border: 1px solid white;
+    box-shadow: none;
   }
 }

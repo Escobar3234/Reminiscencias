@@ -1,4 +1,9 @@
 <ion-header>
+  <ion-toolbar>
+    <ion-title>JUGADORES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <div class="fondo-container"></div>
   <div class="logo-container">
@@ -6,16 +11,14 @@
   </div>
   <h1>JUGADORES</h1>
   <div class="players-container">
-<<<<<<< HEAD
-    <ion-button expand="block" class="custom-button">MATHEO</ion-button>
-    <ion-button expand="block" class="custom-button">EMILIO</ion-button>
-    <ion-button expand="block" class="custom-button" [routerLink]="['/agrusme']">+</ion-button>
-=======
-    <ion-button expand="block" class="custom-button" [routerLink]="['/hoja-persona']">MATHEO</ion-button>
-    <ion-button expand="block" class="custom-button" [routerLink]="['/hoja-persona']">EMILIO</ion-button>
-    <!--<ion-button expand="block" class="custom-button" [routerLink]="['/agumesa']">+</ion-button>-->
->>>>>>> 5f26eda9af40c4c59931210738c7c944b6e03811
-
+    <ion-list>
+      <ion-item *ngFor="let jugador of jugadores">
+        <ion-label>
+          <h2>{{ jugador.apodo }}</h2>
+          <p>{{ jugador.correo_electronico }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">

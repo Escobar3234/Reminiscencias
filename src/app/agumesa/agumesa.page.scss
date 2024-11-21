@@ -15,6 +15,8 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  height: 100%; /* Asegura que el contenedor ocupa todo el espacio disponible */
 }
 
 .title {
@@ -22,6 +24,14 @@
   color: white;
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+.form-container {
+  width: 90%;
+  max-width: 400px; /* Limita el ancho máximo del formulario */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 ion-item {

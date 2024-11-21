@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información del Personaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <div class="background-image"></div> <!-- Fondo tipo pergamino -->
   <div class="container">
@@ -8,28 +14,30 @@
     <div class="input-row">
       <ion-item class="input-item">
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="nombrePersonaje" name="nombrePersonaje" required></ion-input>
       </ion-item>
       <ion-item class="input-item">
         <ion-label position="floating">Apodo</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="apodo" name="apodo" required></ion-input>
       </ion-item>
     </div>
     <div class="input-row">
       <ion-item class="input-item">
         <ion-label position="floating">Edad</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="edad" name="edad" required></ion-input>
       </ion-item>
       <ion-item class="input-item">
         <ion-label position="floating">Altura</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" [(ngModel)]="altura" name="altura"></ion-input>
       </ion-item>
     </div>
   
-      <ion-button expand="block" class="upload-button" (click)="fileInput.click()">Seleccionar Imagen</ion-button> <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" style="display: none;" /> 
+    <ion-button expand="block" class="upload-button" (click)="fileInput.click()">Seleccionar Imagen</ion-button> 
+    <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" style="display: none;" /> 
    
-    <ion-button expand="block" class="continue-button" [routerLink]="['/stadisticas']">CONTINUAR</ion-button>
+    <ion-button expand="block" class="continue-button" (click)="guardarPersonaje()">CONTINUAR</ion-button>
   </div>
+  
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button [routerLink]="['/rol']">
       <ion-icon name="arrow-back"></ion-icon>

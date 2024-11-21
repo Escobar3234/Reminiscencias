@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginPage implements OnInit {
   constructor(
     private http: HttpClient,
     private toastController: ToastController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -38,12 +40,14 @@ export class LoginPage implements OnInit {
             toast.present();
 
             // Redirección basada en el rol devuelto por el servidor
-            if (response.rol === 'Máster') {
+            if (response.rol === 'master') {
               console.log("Redirigiendo a /mesas"); // Log para verificar
-              this.navCtrl.navigateRoot('/mesas'); 
+              this.navCtrl.navigateRoot('/mesas');
             } else if (response.rol === 'jugador') {
               console.log("Redirigiendo a /mesas-jugador"); // Log para verificar
-              this.navCtrl.navigateRoot('/mesas-jugador'); 
+              this.router.navigate(['/mesas-jugador'], {
+                queryParams: { mesas: JSON.stringify(response.mesas) },
+              });
             }
           } else {
             const toast = await this.toastController.create({

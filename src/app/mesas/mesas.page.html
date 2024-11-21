@@ -10,21 +10,31 @@
     <img src="/assets/2.png" alt="Logo" class="logo">
   </div>
   <h1>Mesas</h1>
-  <div class="button-container">
-    <div class="main-container">
-      <ion-button expand="block" class="custom-button" [routerLink]="['/perma1']">
-        <div class="button-content">
-          <img [src]="imageSrc" alt="Mesa Imagen" class="mesa-image">
-          <div class="text-content">
-            <div class="mesa-name">{{ mesaName }}</div>
-            <br>
-            <div class="mesa-id">ID: {{ mesaId }}</div>
-          </div>
-        </div>
-      </ion-button>
+
+  <!-- Contenedor principal para la lista de mesas -->
+  <div class="contenedor-mesas">
+    <div class="mesas-list-container">
+      <ion-list>
+        <ion-item *ngFor="let mesa of mesas">
+          <ion-button expand="block" class="custom-button" [routerLink]="['/perma1', mesa.id_mesas]">
+            <div class="button-content">
+              <img [src]="mesa.image" alt="Mesa Imagen" class="mesa-image">
+              <div class="text-content">
+                <div class="mesa-name">{{ mesa.nombre_mesa }}</div>
+                <div class="mesa-id">ID: {{ mesa.id_mesas }}</div>
+              </div>
+            </div>
+          </ion-button>
+        </ion-item>
+      </ion-list>
     </div>
-    
-    <ion-button expand="block" class="custom-button" [routerLink]="['/agumesa']">Nueva mesa</ion-button>
+  </div>
+
+  <!-- Botón Nueva Mesa -->
+  <div class="button-container">
+    <ion-button expand="block" class="custom-button full-width" [routerLink]="['/agumesa']">
+      Nueva mesa
+    </ion-button>
   </div>
 
   <ion-fab vertical="bottom" horizontal="start" slot="fixed">

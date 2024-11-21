@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,86 +13,89 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'rol',
-    loadChildren: () => import('./rol/rol.module').then( m => m.RolPageModule)
+    loadChildren: () => import('./rol/rol.module').then(m => m.RolPageModule)
   },
   {
     path: 'mesas',
-    loadChildren: () => import('./mesas/mesas.module').then( m => m.MesasPageModule)
+    loadChildren: () => import('./mesas/mesas.module').then(m => m.MesasPageModule)
   },
   {
-    path: 'perma1',
-    loadChildren: () => import('./perma1/perma1.module').then( m => m.Perma1PageModule)
+    path: 'perma1/:idMesa',  // Ruta con el parámetro idMesa
+    loadChildren: () => import('./perma1/perma1.module').then(m => m.Perma1PageModule)
   },
   {
     path: 'agmesa',
-    loadChildren: () => import('./agmesa/agmesa.module').then( m => m.AgmesaPageModule)
+    loadChildren: () => import('./agmesa/agmesa.module').then(m => m.AgmesaPageModule)
   },
   {
     path: 'agumesa',
-    loadChildren: () => import('./agumesa/agumesa.module').then( m => m.AgumesaPageModule)
+    loadChildren: () => import('./agumesa/agumesa.module').then(m => m.AgumesaPageModule)
   },
   {
     path: 'escojerp',
-    loadChildren: () => import('./escojerp/escojerp.module').then( m => m.EscojerpPageModule)
+    loadChildren: () => import('./escojerp/escojerp.module').then(m => m.EscojerpPageModule)
   },
   {
     path: 'personaje',
-    loadChildren: () => import('./personaje/personaje.module').then( m => m.PersonajePageModule)
+    loadChildren: () => import('./personaje/personaje.module').then(m => m.PersonajePageModule)
   },
   {
     path: 'stadisticas',
-    loadChildren: () => import('./stadisticas/stadisticas.module').then( m => m.StadisticasPageModule)
+    loadChildren: () => import('./stadisticas/stadisticas.module').then(m => m.StadisticasPageModule)
   },
   {
     path: 'stadisticas1',
-    loadChildren: () => import('./stadisticas1/stadisticas1.module').then( m => m.Stadisticas1PageModule)
+    loadChildren: () => import('./stadisticas1/stadisticas1.module').then(m => m.Stadisticas1PageModule)
   },
   {
     path: 'hoja-persona',
-    loadChildren: () => import('./hoja-persona/hoja-persona.module').then( m => m.HojaPersonaPageModule)
+    loadChildren: () => import('./hoja-persona/hoja-persona.module').then(m => m.HojaPersonaPageModule)
   },
   {
     path: 'stadisticas2',
-    loadChildren: () => import('./stadisticas2/stadisticas2.module').then( m => m.Stadisticas2PageModule)
+    loadChildren: () => import('./stadisticas2/stadisticas2.module').then(m => m.Stadisticas2PageModule)
   },
   {
     path: 'habilidades',
-    loadChildren: () => import('./habilidades/habilidades.module').then( m => m.HabilidadesPageModule)
+    loadChildren: () => import('./habilidades/habilidades.module').then(m => m.HabilidadesPageModule)
   },
   {
     path: 'debilidades',
-    loadChildren: () => import('./debilidades/debilidades.module').then( m => m.DebilidadesPageModule)
+    loadChildren: () => import('./debilidades/debilidades.module').then(m => m.DebilidadesPageModule)
   },
   {
     path: 'inventario',
-    loadChildren: () => import('./inventario/inventario.module').then( m => m.InventarioPageModule)
+    loadChildren: () => import('./inventario/inventario.module').then(m => m.InventarioPageModule)
   },
   {
     path: 'caract1',
-    loadChildren: () => import('./caract1/caract1.module').then( m => m.Caract1PageModule)
+    loadChildren: () => import('./caract1/caract1.module').then(m => m.Caract1PageModule)
   },
   {
     path: 'agrusme',
-    loadChildren: () => import('./agrusme/agrusme.module').then( m => m.AgrusmePageModule)
+    loadChildren: () => import('./agrusme/agrusme.module').then(m => m.AgrusmePageModule)
   },
   {
     path: 'caract2',
-    loadChildren: () => import('./caract2/caract2.module').then( m => m.Caract2PageModule)
+    loadChildren: () => import('./caract2/caract2.module').then(m => m.Caract2PageModule)
   },
   {
     path: 'mesas-jugador',
-    loadChildren: () => import('./mesas-jugador/mesas-jugador.module').then( m => m.MesasJugadorPageModule)
+    loadChildren: () => import('./mesas-jugador/mesas-jugador.module').then(m => m.MesasJugadorPageModule)
   },
-
-
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

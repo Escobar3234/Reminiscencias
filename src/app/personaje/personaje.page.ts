@@ -69,7 +69,7 @@ export class PersonajePage implements OnInit {
         toast.present();
         
         // Redirigir a la página de mesas del jugador
-        this.navCtrl.navigateRoot('/mesas-jugador');
+        this.navCtrl.navigateRoot('/stadisticas');
       },
       async (error) => {
         console.error('Error al guardar el personaje:', error);

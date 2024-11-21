@@ -7,9 +7,17 @@ import { Component } from '@angular/core';
 })
 export class InventarioPage {
   items = [
-    { name: 'Item 1', image: '/assets/item1.png', info: 'Descripción del Item 1' },
-    { name: 'Item 2', image: '/assets/item2.png', info: 'Descripción del Item 2' },
-    // Agrega más elementos de inventario aquí
+    { name: 'Espada de Hierro', image: '/assets/spada.png', info: 'Una espada básica hecha de hierro.', equipped: false },
+    { name: 'Escudo de Madera', image: '/assets/scudo.png', info: 'Un escudo resistente hecho de madera.', equipped: false },
+    { name: 'Poción de Salud', image: '/assets/posi.png', info: 'Restaura 50 puntos de salud.', equipped: false },
+    { name: 'Casco de Acero', image: '/assets/casco.png', info: 'Un casco que protege la cabeza.', equipped: false },
+    { name: 'Armadura de Cuero', image: '/assets/armadura.png', info: 'Proporciona protección básica.', equipped: false },
+    { name: 'Botas de Explorador', image: '/assets/botas.png', info: 'Ideales para largas caminatas.', equipped: false },
+    // Agrega más elementos según sea necesario
   ];
-  selectedItem: any;
+
+  toggleEquip(item: any) {
+    item.equipped = !item.equipped;
+  }
 }
+ 

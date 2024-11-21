@@ -1,32 +1,26 @@
 <ion-content>
   <div class="scroll-container">
-    <h2 class="title">Debilidades</h2>
-
-    <!-- Cuadrícula de debilidades alineada hacia la parte inferior -->
-    <div class="weakness-grid-container">
-      <div class="weakness-grid">
-        <div class="weakness-item">
-          <ion-img src="assets/veneno.png" class="weakness-image"></ion-img>
-          <p>Envenenamiento</p>
-        </div>
-        <div class="weakness-item">
-          <ion-img src="assets/mald.png" class="weakness-image"></ion-img>
-          <p>Maldiciones</p>
-        </div>
-        <div class="weakness-item">
-          <ion-img src="assets/can.png" class="weakness-image"></ion-img>
-          <p>Cansancio</p>
-        </div>
-        <div class="weakness-item">
-          <ion-img src="assets/hues.png" class="weakness-image"></ion-img>
-          <p>Huesos Rotos</p>
+    <h2>DEBILIDADES</h2>
+    <div class="items-container">
+      <div class="item" *ngFor="let item of items" (click)="selectedItem = item">
+        <ion-img [src]="item.image" class="item-image"></ion-img>
+        <p class="item-name">{{ item.name }}</p>
+        <div class="item-info" *ngIf="selectedItem === item">
+          {{ item.info }}
         </div>
       </div>
-
-      <!-- Botón de retroceso debajo de la cuadrícula -->
-      <ion-button fill="clear" class="back-button" [routerLink]="['/hoja-persona']">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
     </div>
   </div>
+  <!-- Botón de retroceso -->
+
+  <ion-button fill="clear" class="back-button" [routerLink]="['/hoja-persona']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button [routerLink]="['/hoja-persona']">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

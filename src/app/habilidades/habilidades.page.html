@@ -1,42 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Habilidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <div class="skills-container">
-    <div class="fondo-container"></div>
-    <div *ngFor="let skill of skills; let i = index">
-      <div *ngIf="i % 2 === 0" class="skill-row">
-        <div class="skill" (click)="toggleInfo(skills[i])">
-          <!-- Renderizar video o imagen basado en mediaType -->
-          <ng-container [ngSwitch]="skills[i].mediaType">
-            <video *ngSwitchCase="'video'" width="190" height="150" autoplay loop muted>
-              <source [src]="skills[i].media" type="video/mp4">
-              Tu navegador no soporta el elemento de video.
-            </video>
-            <img *ngSwitchCase="'image'" [src]="skills[i].media" alt="{{ skills[i].name }}" class="skill-image">
-          </ng-container>
-          <h4 class="skill-name">{{ skills[i].name }}</h4>
-          <div class="skill-info" *ngIf="skills[i].showInfo">
-            {{ skills[i].info }}
-          </div>
-        </div>
-        <div class="skill" *ngIf="skills[i + 1]" (click)="toggleInfo(skills[i + 1])">
-          <!-- Renderizar video o imagen basado en mediaType -->
-          <ng-container [ngSwitch]="skills[i + 1].mediaType">
-            <video *ngSwitchCase="'video'" width="200" height="130" autoplay loop muted>
-              <source [src]="skills[i + 1].media" type="video/mp4">
-              Tu navegador no soporta el elemento de video.
-            </video>
-            <img *ngSwitchCase="'image'" [src]="skills[i + 1].media" alt="{{ skills[i + 1].name }}" class="skill-image">
-          </ng-container>
-          <h4 class="skill-name">{{ skills[i + 1].name }}</h4>
-          <div class="skill-info" *ngIf="skills[i + 1].showInfo">
-            {{ skills[i + 1].info }}
-          </div>
-        </div>
-      </div>
+  <!-- Contenedor de la cuadrícula -->
+  <div class="habilidades-grid">
+    <div
+      class="habilidad"
+      *ngFor="let habilidad of habilidades"
+      (click)="seleccionarHabilidad(habilidad)"
+    >
+      <img [src]="habilidad.image" [alt]="habilidad.name" />
     </div>
   </div>
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button [routerLink]="['/hoja-persona']">
-      <ion-icon name="arrow-back"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+  <!-- Descripción de la habilidad seleccionada -->
+  <div class="descripcion" *ngIf="habilidadSeleccionada">
+    <h3>{{ habilidadSeleccionada.name }}</h3>
+    <p>{{ habilidadSeleccionada.description }}</p>
+  </div>
+  <ion-button fill="clear" class="back-button" [routerLink]="['/hoja-persona']">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-button>
 </ion-content>
